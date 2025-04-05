@@ -1,0 +1,26 @@
+#! /bin/csh
+unalias cd
+/usr/ucb/mail >/data/07/dreger/junk << EOF
+set keepsave
+save redi@seismo.berkeley.edu :u /data/07/dreger/NEWEVENT/redi_trigger
+delete redi@seismo.berkeley.edu :u 
+quit
+EOF
+##
+##  Scan redi.trigger file for applicable messages
+##
+$REDI_MT_BINDIR/tdmt_msgs_scan 
+\cp $REDI_MT_DATADIR/redi_trigger $REDI_MT_DATADIR/redi_trigger_last
+\rm $REDI_MT_DATADIR/redi_trigger
+cd  $REDI_MT_DATADIR/GUIDE
+##
+##  Attempt to start processing by creating appropriate directory
+##  And running revent_sched
+##
+foreach n (`ls *`)
+mkdir $REDI_MT_DATADIR/NE$n
+cat $REDI_MT_DATADIR/GUIDE/$n >> $REDI_MT_DATADIR/revent_process_log
+\mv $REDI_MT_DATADIR/GUIDE/$n $REDI_MT_DATADIR/NE$n/tdmt_redi_sched.in
+cd $REDI_MT_DATADIR/NE$n
+$REDI_MT_BINDIR/tdmt_redi_sched >& tdmt_redi_sched.msgs &
+end

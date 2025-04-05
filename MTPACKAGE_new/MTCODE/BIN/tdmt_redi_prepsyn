@@ -1,0 +1,30 @@
+#! /bin/csh
+# Shell to filter Green's functions Using SAC
+# Remember to set hcrn and lcrn correctly
+# Do not change dt and npts
+#
+set path=($path $REDI_MT_BINDIR)
+set dir = $REDI_MT_PROG1_GFLOC
+set depcnt=1
+if ( "$1" == "sc" ) then
+set depmax=12
+set depth=(5 8 11 14 17 21 24 27 30 33 36 39)	
+else if ("$1" == "gil7_") then
+set depmax=12
+set depth=(5 8 11 14 18 21 24 27 30 33 36 39)	
+endif
+#
+echo $3
+echo $4
+while($depcnt <= $depmax) 
+if("$3" == "0.01" && "$4" == "0.05") then
+uncompress -c $dir/LP20SYN/{$1}{$2}d{$depth[$depcnt]}.Z > {$1}{$2}d{$depth[$depcnt]}
+endif
+if("$3" == "0.02" && "$4" == "0.05") then
+uncompress -c $dir/LP5020SYN/{$1}{$2}d{$depth[$depcnt]}.Z > {$1}{$2}d{$depth[$depcnt]}
+endif
+if("$4" == "0.10") then
+uncompress -c $dir/LP10SYN/{$1}{$2}d{$depth[$depcnt]}.Z > {$1}{$2}d{$depth[$depcnt]}
+endif
+@ depcnt++
+end

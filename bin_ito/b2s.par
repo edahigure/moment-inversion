@@ -1,0 +1,10 @@
+npts=2048
+dt=0.50
+stime=0.0
+year=1993
+jday=016
+hour=6
+min=29
+sec=0
+msec=0
+ename=Synth

@@ -1,0 +1,1479 @@
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=2
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=24
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=21
+Mxx=-1447.757
+Mxy=-1600.722
+Mxz=489.888
+Myy=1592.134
+Myz=-625.774
+Mzz=-144.377
+Mo=2.33022e+23
+Mw=4.9
+Strike=69 ; 337
+Rake=16 ; 173
+Dip=83 ; 74
+Pdc=72
+Pclvd=28
+Piso=0
+Variance=1.610e-07
+VarRed=6.496e+00
+Var/Pdc=2.226e-09
+Quality=0
+Depth=10
+Depth=10
+Depth=10
+Depth=10
+Depth=10
+Depth=10
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8582.232
+Mxy=354.132
+Mxz=-1157.193
+Myy=11409.907
+Myz=-1285.434
+Mzz=-2827.675
+Mo=1.01711e+24
+Mw=5.3
+Strike=135 ; 44
+Rake=-169 ; -4
+Dip=86 ; 79
+Pdc=53
+Pclvd=47
+Piso=0
+Variance=9.320e-08
+VarRed=6.792e+01
+Var/Pdc=1.769e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8994.978
+Mxy=482.697
+Mxz=-635.714
+Myy=9115.442
+Myz=247.719
+Mzz=-120.464
+Mo=9.09403e+23
+Mw=5.3
+Strike=43 ; 134
+Rake=-4 ; -178
+Dip=88 ; 86
+Pdc=98
+Pclvd=2
+Piso=0
+Variance=1.373e-07
+VarRed=5.584e+01
+Var/Pdc=1.397e-09
+Quality=2
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8994.978
+Mxy=482.697
+Mxz=-635.714
+Myy=9115.442
+Myz=247.719
+Mzz=-120.464
+Mo=9.09403e+23
+Mw=5.3
+Strike=43 ; 134
+Rake=-4 ; -178
+Dip=88 ; 86
+Pdc=98
+Pclvd=2
+Piso=0
+Variance=1.373e-07
+VarRed=5.584e+01
+Var/Pdc=1.397e-09
+Quality=2
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=23
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=7
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=0
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3
+Depth=10
+Station Information
+Station(0): NE75.helm  R=424.0km  AZI=307.0  W=2.343  Zcor=6
+Station(1): NE78.helm  R=181.0km  AZI=248.0  W=1.000  Zcor=35
+Station(2): NE82.helm  R=211.0km  AZI=5.0  W=1.166  Zcor=34
+Mxx=-8830.786
+Mxy=399.904
+Mxz=-1292.455
+Myy=11080.368
+Myz=34.295
+Mzz=-2249.582
+Mo=1.00859e+24
+Mw=5.3
+Strike=43 ; 134
+Rake=-8 ; -172
+Dip=82 ; 82
+Pdc=64
+Pclvd=36
+Piso=0
+Variance=9.285e-08
+VarRed=6.810e+01
+Var/Pdc=1.454e-09
+Quality=3

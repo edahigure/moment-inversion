@@ -1,0 +1,23 @@
+Depth=8
+Station Information
+Station(0): BKS_f0.05.data  R=142.0km  AZI=331.0  W=1.164  Zcor=44
+Station(1): CMB_f0.05.data  R=171.0km  AZI=33.6  W=1.402  Zcor=48
+Station(2): PKD_f0.05.data  R=122.0km  AZI=137.0  W=1.000  Zcor=43
+Mxx=-4837.536
+Mxy=-668.283
+Mxz=-693.078
+Myy=4506.039
+Myz=1129.360
+Mzz=331.497
+Mo=4.90953e+23
+Mw=5.1
+Strike=230 ; 138
+Rake=15 ; 174
+Dip=85 ; 75
+Pdc=96
+Pclvd=4
+Piso=0
+Variance=6.359e-08
+VarRed=9.242e+01
+Var/Pdc=6.616e-10
+Quality=4

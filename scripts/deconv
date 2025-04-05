@@ -1,0 +1,227 @@
+#!/bin/bash
+#deconvoluciona los sismogramas los pasa a centimetros, los rota y crea los archivos helm, aquí igual que Dreger  se integra por lo que supongo que los datos deben estar en velocidad?
+
+HOME=/Users/edahi/Desktop/moment_inversion
+
+EVLA=$2
+EVLO=$3
+LCRN=$4
+HCRN=$5
+
+echo ${EVLA} ${EVLO} ${LCRN} ${HCRN}
+
+#DT_int=1.0
+
+
+#EVLA=23.72
+#EVLO=-108.46
+
+#los sismogramas se interpolaran a 1 muestra por seg 
+DT_int=$6
+
+echo  DT_int $DT_int
+
+data_dir=$(pwd)'/data'
+
+
+ls $data_dir/*$1.*HE.sac> listE
+
+ls $data_dir/*$1.*HN.sac> listN
+
+ls $data_dir/*$1.*HZ.sac> listZ
+
+
+declare -a nameE 
+declare -a nameN 
+declare -a nameZ 
+
+
+contE=0;
+for next in `cat listE`
+do
+nameE[$contE]=$next
+contE=$((contE+1))
+done
+
+
+contN=0;
+for next in `cat listN`
+do
+nameN[$contN]=$next
+contN=$((contN+1))
+done
+
+
+contZ=0;
+for next in `cat listZ`
+do
+nameZ[$contZ]=$next
+contZ=$((contZ+1))
+done
+
+
+
+
+if (($contN != $contE &&  $contN != $contZ && $contE != $contZ)); then
+echo  not all N E Z components present.
+exit
+fi
+
+
+
+#echo ${nameE[@]}
+
+
+
+
+#deconvoluciona los sismogramas los pasa a centimetros, los rota y crea los archivos helm, aquí a diferencia con Dreger no se integra por lo que supongo que los datos están en ...?
+
+
+
+rm debug
+1>debug
+
+
+
+if [ -f 'debug' ]; then
+
+for ((k=0;k<contE;k++))
+do
+
+
+
+splited_E=($(echo ${nameE[k]} | tr "." "\n"))
+
+
+
+splited_N=($(echo ${nameN[k]} | tr "." "\n"))
+
+splited_Z=($(echo ${nameZ[k]} | tr "." "\n"))
+
+
+
+
+echo ${splited_E[@]}
+
+
+splited_name=($(echo ${splited_E[0]} | tr "/" "\n"))
+
+
+echo ${splited_name[@]}
+
+year=${splited_name[5]}  
+
+jday=${splited_E[1]}
+hour=${splited_E[2]}
+min=${splited_E[3]}
+
+station=${splited_E[5]}
+
+cmpE=${splited_E[6]}
+cmpN=${splited_N[6]}
+cmpZ=${splited_Z[6]}
+
+echo  $year $jday $hour $station  $cmpE
+
+ls $(pwd)/IRISDMC/SACPZ.*.${station}.--.*HE> my_ls
+
+
+read file_pz_E<<< `ls $(pwd)/IRISDMC/SACPZ.*.${station}.--.*HE`
+read file_pz_N<<< `ls $(pwd)/IRISDMC/SACPZ.*.${station}.--.*HN`
+read file_pz_Z<<< `ls $(pwd)/IRISDMC/SACPZ.*.${station}.--.*HZ`
+
+echo $file_pz_E 
+echo $file_pz_N 
+echo $file_pz_Z
+
+
+echo ${nameE[k]}
+echo ${nameN[k]}
+echo ${nameZ[k]}
+
+sac << eof
+
+setbb dt_int "${DT_int}"
+getbb dt_int
+
+setbb nameE "${nameE[k]}"
+getbb nameE
+
+setbb nameN "${nameN[k]}"
+getbb nameN
+
+setbb nameZ "${nameZ[k]}"
+getbb nameZ
+
+setbb lcrn $LCRN
+getbb lcrn
+
+setbb hcrn $HCRN
+getbb hcrn
+
+setbb evla $EVLA
+getbb evla
+
+setbb evlo $EVLO
+getbb evlo
+
+setbb zp_file_E "$file_pz_E "
+getbb zp_file_E
+
+setbb zp_file_N "$file_pz_N "
+getbb zp_file_N
+
+setbb zp_file_Z "$file_pz_Z "
+getbb zp_file_Z
+
+
+read %nameE
+rtr; taper
+rmean
+transfer from polezero s  %zp_file_E to none freq 0.001 0.01 5 10
+bp co %lcrn %hcrn p 2
+interpolate delta %dt_int
+write ${nameE[$k]}_deconv 
+
+
+read %nameN
+rtr; taper
+rmean
+transfer from polezero s  %zp_file_N to none freq 0.001 0.01 5 10
+bp co %lcrn %hcrn p 2
+interpolate delta %dt_int
+write ${nameN[$k]}_deconv 
+
+
+read %nameZ
+rtr; taper
+rmean
+transfer from polezero s  %zp_file_Z to none freq 0.001 0.01 5 10
+bp co %lcrn %hcrn p 2
+interpolate delta %dt_int
+write ${nameZ[$k]}_deconv
+
+read ${nameE[$k]}_deconv  ${nameN[$k]}_deconv 
+ch evla %evla evlo %evlo
+rot
+read more ${nameZ[$k]}_deconv
+mul 100
+
+
+write tmp2 tmp1 tmp3
+
+
+quit
+quit
+eof
+
+cp tmp2 ${nameE[$k]}_rot
+cp tmp1 ${nameN[$k]}_rot
+cp tmp3 ${nameZ[$k]}_rot
+
+${HOME}/bin_eg/sac2helm out=${splited_E[5]}.helm
+
+done
+
+fi
+

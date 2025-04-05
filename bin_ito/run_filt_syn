@@ -1,0 +1,138 @@
+#! /bin/csh
+# Window out the eight fundamental vectors
+# and filter using SAC
+# Remember to set NT and DT CORRECTLY!
+
+set path=($path /Users/edahi/Desktop/moment_inversion/bin_ito)
+
+if ( -f b2s.par) then
+rm  b2s.par
+echo npts=1024  > b2s.par
+echo dt=1.50  >>b2s.par
+echo stime=0.0  >>b2s.par
+echo year=1993  >>b2s.par
+echo jday=016  >>b2s.par
+echo hour=6  >>b2s.par
+echo min=29  >>b2s.par
+echo sec=0  >>b2s.par
+echo msec=0  >>b2s.par
+echo ename="Synth"  >>b2s.par
+else
+echo npts=1024  >> b2s.par
+echo dt=1.50  >>b2s.par
+echo stime=0.0  >>b2s.par
+echo year=1993  >>b2s.par
+echo jday=016  >>b2s.par
+echo hour=6  >>b2s.par
+echo min=29  >>b2s.par
+echo sec=0  >>b2s.par
+echo msec=0  >>b2s.par
+echo ename="Synth"  >>b2s.par
+endif
+
+
+
+set depth=$1
+set dist=$2
+set loopend=$3
+set ddist=$4
+set lcrn=$5
+set hcrn=$6
+
+
+
+
+set count=0
+
+
+#set dt=1.50
+#set npts=1024
+
+set npts=$7
+set npts_2=$8
+set dt=$9
+
+
+set name="jp"
+
+echo run_filt npts $7  npts_2 $8 dt $9
+
+while ($count < $loopend)
+
+#  BEGIN SHELL
+echo here ok {$name}{$dist}d{$depth}.bin
+\cp {$name}{$dist}d{$depth}.bin tmp2
+
+echo window nt=$npts nx=8 nv=1 v0=0 
+
+window nt=$npts nx=8 nv=1 v0=0 < tmp2 >! tmp3
+  
+echo bin2sac par=b2s.par dt=$dt npts=$npts
+bin2sac par=b2s.par dt=$dt npts=$npts < tmp3 >! tss
+
+window nt=$npts nx=8 nv=1 v0=1 < tmp2 >! tmp3
+bin2sac par=b2s.par dt=$dt npts=$npts < tmp3 >! tds
+
+
+window nt=$npts nx=8 nv=1 v0=2 < tmp2 >! tmp3
+bin2sac par=b2s.par dt=$dt npts=$npts < tmp3 >! xss
+window nt=$npts nx=8 nv=1 v0=3 < tmp2 >! tmp3
+bin2sac par=b2s.par dt=$dt npts=$npts < tmp3 >! xds
+window nt=$npts nx=8 nv=1 v0=4 < tmp2 >! tmp3
+bin2sac par=b2s.par dt=$dt npts=$npts < tmp3 >! xdd
+window nt=$npts nx=8 nv=1 v0=5 < tmp2 >! tmp3
+bin2sac par=b2s.par dt=$dt npts=$npts < tmp3 >! zss
+window nt=$npts nx=8 nv=1 v0=6 < tmp2 >! tmp3
+bin2sac par=b2s.par dt=$dt npts=$npts < tmp3 >! zds
+window nt=$npts nx=8 nv=1 v0=7 < tmp2 >! tmp3
+bin2sac par=b2s.par dt=$dt npts=$npts < tmp3 >! zdd
+
+
+
+#sac2000 << end
+sac <<end
+setbb HCRN $hcrn
+getbb HCRN
+setbb LCRN $lcrn
+getbb LCRN
+read tss tds xss xds xdd zss zds zdd
+bp co %LCRN %HCRN p 2
+decimate 2
+write over
+quit
+end
+#
+#
+
+
+sac2bin in=tss out=tmp
+\mv tmp tss_bis
+
+
+sac2bin in=tds out=tmp
+\mv tmp tds_bis
+sac2bin in=xss out=tmp
+\mv tmp xss_bis
+sac2bin in=xds out=tmp
+\mv tmp xds_bis
+sac2bin in=xdd out=tmp
+\mv tmp xdd_bis
+sac2bin in=zss out=tmp
+\mv tmp zss_bis
+sac2bin in=zds out=tmp
+\mv tmp zds_bis
+sac2bin in=zdd out=tmp
+\mv tmp zdd_bis
+cat tss_bis tds_bis xss_bis xds_bis xdd_bis zss_bis zds_bis zdd_bis >! tmp2
+
+makeascii ntr=8 nt=$npts_2  dt=$dt format="(6e12.5)" < tmp2 >! {$name}{$dist}d{$depth}
+
+
+\rm tss_bis tds_bis xss_bis xds_bis xdd_bis zss_bis zds_bis zdd_bis tmp*
+
+@ dist += $ddist
+@ count++
+end
+
+
+

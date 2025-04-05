@@ -1,0 +1,34 @@
+########################################################################
+#	prod config for REDI TDMT PROGRAM
+########################################################################
+
+
+
+# Setup for time domain moment tensor program
+#
+# Common variables
+#
+#The MTPACKAGE environment variable needs to be set to where you installed
+#the moment tensor package
+export MACHINE=linux
+export MTPACKAGE=/home/edahi/Desktop/MTPACKAGE_new                
+export REDI_MT_BINDIR=$MTPACKAGE/MTCODE/BIN
+export REDI_MT_PROG_1=$REDI_MT_BINDIR/tdmt_redi_launch
+export REDI_MT_DATDIR=.
+export REDI_MT_LOGDIR=.
+export REDI_MT_SYNTHDIR=$MTPACKAGE
+export REDI_MT_EXTRACT_OPTIONS=-f
+export REDI_MT_DEBUG_OPTION=1
+export REDI_MT_STATLIST=$MTPACKAGE/bdsn.stat
+export REDI_MT_RESP=$MTPACKAGE/instr.resp
+export REDI_MT_DATASTREAM=BH
+export REDI_MT_PLOT=0
+#
+#
+# Program specific variables
+export REDI_MT_PROG1_PAGE=0
+export REDI_MT_PROG1_GFLOC=$MTPACKAGE
+export REDI_MT_PROG1_STATMAX=`awk '{}END{print NR}' $REDI_MT_STATLIST`
+export REDI_MT_PROG1_STATLIST="BKS CMB HOPS JRSC KCC MHC MOD ORV PKD SAO WDC YBH"
+export REDI_MT_PROG1_NSTAT="`printenv REDI_MT_PROG1_STATLIST | wc -w`"
+export REDI_MT_PROG1_GETLIST=`awk '{if(NR==1){printf("%s",$1)} else printf(",%s",$1)}' $REDI_MT_STATLIST`

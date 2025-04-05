@@ -1,0 +1,9 @@
+csh run_parallel 1 MODEL.socal
+csh run_fkrsort socal 100 8 1
+csh run_filter socal100d8.disp socal100d8 0.02 0.10
+../BIN/tdmt_invc>plot
+./psigl<plot>plot.ps
+
+
+
+

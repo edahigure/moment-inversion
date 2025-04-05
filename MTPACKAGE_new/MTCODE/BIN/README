@@ -1,0 +1,15 @@
+
+The following files are shell scripts and should never be
+removed.  You cannot rebuild them!!!
+
+-rwxr-xr-x   1 dreger   users       1105 Jan 31 12:17 revent_trigger*
+-rwxr-xr-x   1 dreger   users        788 Jan 31 12:17 tdmt_redi_getdata*
+-rwxr-xr-x   1 dreger   users        425 Jan 31 12:17 tdmt_redi_launch*
+-rwxr-xr-x   1 dreger   users       1492 Jan 31 12:17 tdmt_redi_prepdata*
+-rwxr-xr-x   1 dreger   users        834 Feb  5 09:31 tdmt_redi_prepsyn*
+-rwxr-xr-x   1 dreger   users      26716 Feb  5 12:35 tdmt_redi_sched*
+-rwxr-xr-x   1 dreger   users       1007 Jan 31 12:17 tdmt_trigger*
+
+Note that the filename tdmt_redi_getdata has been changed to
+Tdmt_redi_getdata to disable the Berkeley specific data retrieval in
+the tdmt_redi_sched.c program.

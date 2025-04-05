@@ -1,0 +1,148 @@
+Graphics in SAC
++++++++++++++++
+
+Overview
+--------
+This section describes the graphics devices that are currently supported and 
+then briefly describes the commands in each of the graphics functional modules.
+
+Graphics Devices
+----------------
+
+There are two graphics "devices" currently supported.
+
+  - XWINDOWS is a general windowing system running on most 
+     high-resolution, bit-mapped graphics workstations.
+  - SGF is a general purpose device driver representing a 
+     large class of actual physical devices.
+
+Each device is described in more detail below.
+
+XWINDOWS (or X for short) is a windowing scheme developed under the 
+industry-financed Athena project at MIT. X employs what is called a network 
+model, where a single process or server controls the screen display. Other 
+programs send requests to this server when they want to modify part of the 
+screen. X is widely used on the graphics workstation and offers one of the 
+best frameworks for developing portable window-based applications.  (A problem
+with backward compatibility on many platforms is that the location of the X11
+libraries may change.)
+
+SGF stands for SAC Graphics File. A SAC Graphics File contains all the 
+information needed to generate a single plot on any graphics device. (Using 
+the current computer jargon, these are called graphics "metafiles.") Each 
+plot is stored in a separate file. The file names are of the form "Fnnn.SGF" 
+where "nnn" is the plot number, beginning with "001". You can control some 
+features of this file name using the SGF command. The program SGFTOPS can 
+convert a SGF file to postscript, and scrpts are provided to print the files
+and/or convert them to PDF format.  See sac/utils/README_utils for details.
+
+Graphics Control Module
+-----------------------
+
+These commands control device selection and certain aspects of the display.
+
+:BEGINDEVICES: selects one or more graphics devices for plotting and
+:ENDDEVICES:   deselects plotting to those devices.
+:ERASE:        erases the graphics display area,
+:VSPACE:       controls the maximum size and shape of plots, and
+:SGF:          controls certain options for the SAC Graphics File device.
+
+Graphics Action Module
+----------------------
+The commands in this module are mostly action-producing ones that create plots 
+in various formats.
+
+:PLOT:       plots each signal in memory on a separate plot.
+:PLOT1:      plots a set of signals on a single plot with a common x axis and 
+             separate y axes.
+:PLOT2:      plots a set of signals on a single plot with common x and y axes 
+             (i.e. an overlay plot).
+:PLOTPK:     produces a plot for the picking of arrival times, seismic phases, 
+             coda, etc. The format is similiar to that of PLOT1. A cursor is 
+             used to do the picking. The picks go into the header and can also 
+             be written into a HYPO pick file (OHPF) or an alphanumeric pick 
+             file (OAPF).
+:PLOTPM:     generates a "particle-motion" plot on pairs of signals.
+:FILEID:     controls the display of a file identification and
+:FILENUMBER: controls the display of file numbers on the sides of plots.
+:PICKS:      controls the display of time picks on these plots.
+:SETDEVICE:  lets you select a default graphics device to be used when plotting.
+:PLOTC:      notates SAC plots and creates figures using cursor.
+:PLOTALPHA:  reads alphanumeric data files on disk into memory and plots the 
+             data to the current output device.
+:PLOTDY:     creates a plot with error bars.
+:PLOTXY:     plots one or more data files versus another data file.
+:PRINT:      prints most recent .sgf file in memory.
+
+Graphics Environment Module
+---------------------------
+The commands in this module are mostly parameter-setting ones that control 
+various parts of the plots produced by the Graphics Action Module.
+
+:XLIM:         control the plot limits for the y axes.
+:YLIM:         control the plot limits for the x axes
+
+:XVPORT:       control the location of the plot within the plotting area
+:YVPORT:       control the location of the plot within the plotting area
+
+:TITLE:        specify a title (TITLE)
+:XLABEL:       x axes labels 
+:YLABEL:       y axes labels 
+
+:PLABEL:       set of general plot labels
+
+There are several commands that control the displaying of the data itself:
+
+:LINE:         controls linestyle selection
+:SYMBOL:       controls symbol plotting, and
+:COLOR:        controls color selection.
+:GTEXT:        controls the quality and font of text used in plots and
+
+:TSIZE:        controls the text size attributes. If you are using a 
+               multi-windowing workstation, you can use the WINDOW command to 
+               set the location and shape of the graphics windows and the
+
+:BEGINWINDOW: command to select a specific graphics window for plotting.
+:BEGINFRAME:  turns off automatic new frame actions between plots and 
+:ENDFRAME:    resumes automatic new frame actions. Combined with other graphics 
+              commands (especially XVPORT and YVPORT), these two commands can 
+              be used to create fairly complicated plots.
+
+:XLIN:       set the x axis to linear scaling
+:XLOG:       set the x axis to logarithmic scaling
+
+:YLIN:       set the y axis to linear scaling
+:YLOG:       set the y axis to logarithmic scaling
+
+:LINLIN:     to set the scaling for both axes, x-linear, y-linear
+:LINLOG:     to set the scaling for both axes, x-linear, y-log
+:LOGLIN:     to set the scaling for both axes, x-log,    y-linear
+:LOGLOG:     to set the scaling for both axes, x-log,    y-log
+
+:XDIV:       control the spacing between labeled divisions
+:YDIV:       control the spacing between labeled divisions
+
+:XFUDGE:     change the "fudge factors" on the x axis
+:YFUDGE:     change the "fudge factors" on the y axis
+
+:AXES:       control the location of labeled axes 
+:TICKS:      control the location of tick marks.
+
+:GRID:       control the plotting of grid lines 
+:BORDER:     control the plotting of a surrounding border.
+:XGRID:      that let you independently control gridding on the x axis
+:YGRID:      that let you independently control gridding on the y axis
+
+There are several commands which control the display of logarithmic axes:
+      
+:XFULL:      control the plotting of full logarithmic decades,
+:YFULL:      control the plotting of full logarithmic decades,
+:LOGLAB:     controls the plotting of secondary labels, and
+:FLOOR:      puts a minimum value on logarthimically scaled data.
+:LOADCTABLE: allows the user to select a new color table for use in image plots.
+:WAIT:       tells SAC whether or not to pause between plots.
+:WIDTH:      controls line-width selection for graphics devices.
+:NULL:       controls the plotting of null values.
+
+Finally, the QDP command controls the "quick and dirty plot" option. I'll 
+let you look that one up in the Command Reference Manual!

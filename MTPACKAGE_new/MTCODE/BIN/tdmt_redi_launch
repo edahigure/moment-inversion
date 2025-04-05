@@ -1,0 +1,23 @@
+#! /bin/csh -x
+# Shell to write tdmt input file
+##
+##
+set progpath=$REDI_MT_BINDIR
+set CONFIG=$1
+set YR=$2
+set JD=$3
+set HR=$4
+set MN=$5
+set SEC=$6
+set LAT=$7
+set LON=$8
+set DEP=$9
+set MAG=$10
+set REDIID=$11
+set RUNDIR=$12
+mkdir $RUNDIR
+cd    $RUNDIR
+echo  "$CONFIG $YR $JD $HR $MN $SEC $LAT $LON $DEP $MAG $REDIID" > tdmt_redi_sched.in
+\rm mt_inv_redi.out
+#source $REDI_MT_BINDIR/tdmt.config
+$REDI_MT_BINDIR/tdmt_redi_sched

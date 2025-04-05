@@ -1,0 +1,57 @@
+#! /bin/csh
+# Window out the eight vectors for many distances
+# Remember to set NT and DT CORRECTLY!
+# USE wvint9 (The flipped traces are corrected within this
+# code rather than by the external program flip
+#
+#
+
+set REDI_MT_BINDIR = ../BIN
+
+set dt=0.50
+set npts=1024
+set name=$1
+set dist=$2
+set depth=$3
+set loopend=$4
+set count=0
+set j=1
+set vshift=0
+set i=0
+set nvec=0
+set n=0
+rehash
+#
+##First inverse fft complex spectra to produce displacement time series
+$REDI_MT_BINDIR/wvint9 
+#<< eof
+#d
+#eof
+#
+@ nvec=($loopend - $count) * 10
+while ($count < $loopend)
+@ vshift=$i + 7
+$REDI_MT_BINDIR/window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec > tmp1$$
+@ vshift=$i + 4
+$REDI_MT_BINDIR/window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec > tmp2$$
+@ vshift=$i + 6
+$REDI_MT_BINDIR/window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec > tmp3$$
+@ vshift=$i + 3
+$REDI_MT_BINDIR/window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec > tmp4$$
+@ vshift=$i + 1
+$REDI_MT_BINDIR/window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec > tmp5$$
+@ vshift=$i + 5
+$REDI_MT_BINDIR/window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec > tmp6$$
+@ vshift=$i + 2
+$REDI_MT_BINDIR/window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec > tmp7$$
+@ vshift=$i
+$REDI_MT_BINDIR/window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec > tmp8$$
+cat tmp1$$ tmp2$$ tmp3$$ tmp4$$ tmp5$$ tmp6$$ tmp7$$ tmp8$$ > junk
+echo $j
+$REDI_MT_BINDIR/mkHelm format="(6e12.5)" ntr=8 dt=$dt nt=$npts < junk > {$name}{$dist}d{$depth}.disp
+rm tmp*$$
+@ i += 10
+@ count++
+@ j++
+@ dist += 5
+end

@@ -1,0 +1,19 @@
+#!/bin/csh
+#
+
+#Number of machine CPUS maximum value=4
+set nproc=$1
+#Name of FKRPROG input file
+set model=$2
+set n=1
+
+#Remove FKRPROG output file from previous run
+\rm GREEN*
+
+while($n <= $nproc)
+
+sed -e "1,$ s/X/$n/g" < $model | sed -e "1,$ s/Y/$nproc/g" > MODEL${n}
+
+$REDI_MT_BINDIR/FKRPROG < MODEL{$n} >& msgs{$n} &
+@ n += 1
+end

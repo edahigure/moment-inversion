@@ -1,0 +1,40 @@
+#! /bin/csh
+set path=($path $REDI_MT_BINDIR)
+set flag  = `printenv REDI_MT_EXTRACT_OPTIONS`
+set STAT  = `printenv REDI_MT_PROG1_GETLIST`
+set STAT2 = `printenv REDI_MT_PROG1_STATLIST`
+set machine=`printenv MACHINE`
+# Shell to obtain BDSN Data and Convert to SAC
+# field 1 jday
+# field 2 cday (mody)
+# field 3 yr
+# field 4 hr
+# field 5 min
+# field 6 number of minutes to extract
+### Note that lines commented out by ### are code used to extract data from
+### the NCEDC. This script will need to be modified to extract data in SAC
+### format from your archival system. This script now only copies SAC data from
+### the Example_2 subdirectory
+set CHAN = `printenv REDI_MT_DATASTREAM`
+if("$CHAN" == "BH") then
+set COMP = vbb
+else if("$CHAN" == "LH") then
+set COMP = lp
+endif
+####
+###qdata $flag {$3}.{$1},{$4}:{$5} -s {$6}M $STAT {$CHAN}{Z,N,E}
+#### Translate to SAC
+###ms2sac -c $REDI_MT_STATLIST {$n}.{$CHAN}{$m}.D.{$3}.{$1}.{$4}{$5} > {$3}{$2}{$4}{$5}00.{$n}.{$CHAN}{$m}
+####
+foreach n ($STAT2)
+foreach m (E N Z)
+if("$machine" == "linux") then
+\cp $MTPACKAGE/EXAMPLE_2/DATA_PC/{$3}{$2}{$4}{$5}00.{$n}.{$CHAN}{$m} .
+else if("$machine" == "sun") then
+\cp $MTPACKAGE/EXAMPLE_2/DATA_SUN/{$3}{$2}{$4}{$5}00.{$n}.{$CHAN}{$m} .
+endif
+end
+end
+####
+#### Remove single component Steim files
+###\rm  *.{$CHAN}*.D.{$3}.{$1}.{$4}{$5}

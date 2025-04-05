@@ -1,0 +1,20 @@
+#!/bin/bash
+#por si hay problemas de memoria con sac
+#valgrind --tool=memcheck --leak-check=yes sac 
+
+
+source ~/.bashrc
+
+HOME=/Users/edahi/Desktop/moment_inversion
+export REDI_MT_BINDIR=/Users/edahi/Desktop/moment_inversion/MTPACKAGE_new/MTCODE/BIN
+
+
+data_dir=/Users/edahi/Desktop/moment_inversion/done_2003-04-15-mw55-gulf-of-california
+
+cd ${data_dir}
+
+
+
+$REDI_MT_BINDIR/tdmt_invc>plot_1
+$REDI_MT_BINDIR/psigl<plot_1>plot_1.ps
+

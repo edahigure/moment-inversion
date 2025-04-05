@@ -1,0 +1,18 @@
+
+Berkeley Automatic Moment Tensor Code Version 1.1
+by Douglas Dreger
+
+Documentation is in word2000 format: tdmtdocs.doc
+		 in html:	     tdmtdocs.htm
+
+To compile use the 'make all' command in the MTCODE subdirectory
+
+contact information
+dreger@seismo.berkeley.edu
+
+The reporting of seismic moment tensor solutions obtained
+using this software on the WWW and in the technical literature should include
+the following acknowledgement statement. "Moment tensors were computed using
+the tdmt_invc package developed by Douglas Dreger of the Berkeley Seismological
+Laboratory, and Green's functions were computed using the FKRPROG software
+developed by Chandan Saikia with URS."

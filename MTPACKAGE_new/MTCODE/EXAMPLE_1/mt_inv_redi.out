@@ -1,0 +1,483 @@
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.1km  AZI=10.2  W=1.000  Zcor=90
+Station(1): testdata2  R=100.1km  AZI=40.3  W=1.000  Zcor=2
+Station(2): testdata3  R=100.1km  AZI=50.4  W=1.000  Zcor=2
+Mxx=-4925796150589018469302272.000
+Mxy=23986241798244997229707264.000
+Mxz=2264763318075710129569792.000
+Myy=-4803465241036575414943744.000
+Myz=-4055200101093309761454080.000
+Mzz=9729261391625594421116928.000
+Mo=inf
+Mw=19.6
+Strike=0 ; 270
+Rake=10 ; 179
+Dip=89 ; 80
+Pdc=31
+Pclvd=69
+Piso=0
+Variance=inf
+VarRed=-nan
+Var/Pdc=inf
+Quality=0
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=90
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=2
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=2
+Mxx=-4664700097055269389860864.000
+Mxy=24059104850080008754954240.000
+Mxz=2255451847137099830525952.000
+Myy=-5117227594334375445004288.000
+Myz=-4084463812207652206804992.000
+Mzz=9781927691389644834865152.000
+Mo=inf
+Mw=19.6
+Strike=0 ; 270
+Rake=10 ; 179
+Dip=89 ; 80
+Pdc=31
+Pclvd=69
+Piso=0
+Variance=inf
+VarRed=-nan
+Var/Pdc=inf
+Quality=0
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=90
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=2
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=2
+Mxx=-4664700097055269389860864.000
+Mxy=24059104850080008754954240.000
+Mxz=2255451847137099830525952.000
+Myy=-5117227594334375445004288.000
+Myz=-4084463812207652206804992.000
+Mzz=9781927691389644834865152.000
+Mo=inf
+Mw=19.6
+Strike=0 ; 270
+Rake=10 ; 179
+Dip=89 ; 80
+Pdc=31
+Pclvd=69
+Piso=0
+Variance=inf
+VarRed=-nan
+Var/Pdc=inf
+Quality=0
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=90
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=2
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=2
+Mxx=-4664700097055269389860864.000
+Mxy=24059104850080008754954240.000
+Mxz=2255451847137099830525952.000
+Myy=-5117227594334375445004288.000
+Myz=-4084463812207652206804992.000
+Mzz=9781927691389644834865152.000
+Mo=inf
+Mw=19.6
+Strike=0 ; 270
+Rake=10 ; 179
+Dip=89 ; 80
+Pdc=31
+Pclvd=69
+Piso=0
+Variance=inf
+VarRed=-nan
+Var/Pdc=inf
+Quality=0
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=90
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=2
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=2
+Mxx=-4664700097055269389860864.000
+Mxy=24059104850080008754954240.000
+Mxz=2255451847137099830525952.000
+Myy=-5117227594334375445004288.000
+Myz=-4084463812207652206804992.000
+Mzz=9781927691389644834865152.000
+Mo=inf
+Mw=19.6
+Strike=0 ; 270
+Rake=10 ; 179
+Dip=89 ; 80
+Pdc=31
+Pclvd=69
+Piso=0
+Variance=inf
+VarRed=-nan
+Var/Pdc=inf
+Quality=0
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=90
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=2
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=2
+Mxx=-4664700097055269389860864.000
+Mxy=24059104850080008754954240.000
+Mxz=2255451847137099830525952.000
+Myy=-5117227594334375445004288.000
+Myz=-4084463812207652206804992.000
+Mzz=9781927691389644834865152.000
+Mo=inf
+Mw=19.6
+Strike=0 ; 270
+Rake=10 ; 179
+Dip=89 ; 80
+Pdc=31
+Pclvd=69
+Piso=0
+Variance=inf
+VarRed=-nan
+Var/Pdc=inf
+Quality=0
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=90
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=2
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=2
+Mxx=-4664700097055269389860864.000
+Mxy=24059104850080008754954240.000
+Mxz=2255451847137099830525952.000
+Myy=-5117227594334375445004288.000
+Myz=-4084463812207652206804992.000
+Mzz=9781927691389644834865152.000
+Mo=inf
+Mw=19.6
+Strike=0 ; 270
+Rake=10 ; 179
+Dip=89 ; 80
+Pdc=31
+Pclvd=69
+Piso=0
+Variance=inf
+VarRed=-nan
+Var/Pdc=inf
+Quality=0
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4
+Depth=8
+Station Information
+Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5
+Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5
+Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6
+Mxx=-0.477
+Mxy=0.611
+Mxz=-0.088
+Myy=0.125
+Myz=-0.520
+Mzz=0.352
+Mo=9.1326e+19
+Mw=2.6
+Strike=20 ; 275
+Rake=39 ; 155
+Dip=70 ; 54
+Pdc=92
+Pclvd=8
+Piso=0
+Variance=2.344e-15
+VarRed=9.581e+01
+Var/Pdc=2.553e-17
+Quality=4

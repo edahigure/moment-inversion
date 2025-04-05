@@ -1,0 +1,488 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>This package includes source code for the time domain, deviatoric moment tensor</TITLE>
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+
+<P ALIGN="CENTER">Time-Domain Moment Tensor INVerse Code (TDMT_INVC)</P>
+<P ALIGN="CENTER">Release 1.1</P>
+<P ALIGN="CENTER"></P>
+<P ALIGN="CENTER">By </P>
+<P ALIGN="CENTER"></P>
+<P ALIGN="CENTER">Douglas S. Dreger</P>
+<P ALIGN="CENTER"></P>
+<P ALIGN="CENTER">&nbsp;</P>
+<P ALIGN="CENTER">&nbsp;</P>
+<P ALIGN="CENTER">August 8, 2002</P>
+<P ALIGN="CENTER"></P>
+<P ALIGN="CENTER">&nbsp;</P>
+<P ALIGN="CENTER">&nbsp;</P>
+<B><P ALIGN="CENTER">Time-Domain Moment Tensor INVerse Code (TDMT_INVC)</P>
+<P ALIGN="CENTER"></P>
+<P ALIGN="JUSTIFY">Introduction</P>
+<P ALIGN="JUSTIFY"></P>
+</B><P ALIGN="JUSTIFY">This seismic moment tensor inverse software package has been in use at the University of California, Berkeley Seismological Laboratory (BSL) since 1993 and is employed to automatically investigate all M<SUB>L</SUB>&gt;3.5 events in northern California (e.g. <A HREF="http://www.seismo.berkeley.edu/~dreger/mtindex.html">www.seismo.berkeley.edu/~dreger/mtindex.html</A>). The package has been successfully implemented at the Japan National Research Institute for Earth Science and Disaster Prevention (NIED; <U><FONT COLOR="#0000ff">argent.geo.bosai.go.jp</U></FONT>), and has been used by individual researchers in the United States, Europe and Asia. This distribution includes a set of programs for calculating a library of Green’s functions, inverting broadband data for the seismic moment tensor, various data processing utilities and shell scripts, and code and scripts demonstrating how to automate the procedures. Complete source code is provided. The frequency-wavenumber integration program (FKRPROG) written by Chandan Saikia of URS is included with his permission. This software may be distributed only by means of its gzipped tar file. There is no warranty either expressed or implied, and the author is not responsible for damages due to misinterpretation of results and misuse of the software. <B>Finally, this software is freely distributed for non-commercial use. The reporting of seismic moment tensor solutions obtained using this software on the WWW and in the technical literature should include the following acknowledgement statement. &quot;Moment tensors were computed using the mtpackagev1.1 package developed by Douglas Dreger of the Berkeley Seismological Laboratory, and Green’s functions were computed using the FKRPROG software developed by Chandan Saikia of URS.&quot;</P>
+</B><P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">In the following the users manual documents how to build the software package, demonstrates usage through a series of examples, provides references to studies illustrating how suitable velocity models may be determined, and describes how the method may be automated. </P>
+<P ALIGN="JUSTIFY"></P>
+<B><P ALIGN="JUSTIFY">Building the Program</B> </P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Download the package compressed tar file from the Table of Contents (or the current version) from <A HREF="http://www.seismo.berkeley.edu/~dreger)"><B>www.seismo.berkeley.edu/~dreger)</B></A>. Uncompressing and extracting the files will produce a directory structure with a root directory named MTPACKAGE and various subdirectories. The source code and Makefile are located in the MTCODE subdirectory. The software uses <A HREF="http://www.nr.com/"><B>Numerical Recipes for C  </B></A>, and the <A HREF="http://www.llnl.gov/sac/"><B>Seismic Analysis Code (SAC)</B></A><B>, </B>which must be obtained separately by the user. When building the numerical recipes library, nrcv2.a, it is necessary to use the standard C option as opposed to ANSI C. </P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Before compiling, set the Numerical Recipies for C, &quot;NRC&quot;, variable in the Makefile with the directory path pointing to the nrcv2.a library file.  Use the command &quot;make all&quot; to build the software package. The distribution compiles using the GNU c (gcc) and GNU fortran (g77) compilers on PCs running Linux and SUN workstations running Solaris. The ‘make cleanup’ command will remove all program files, libraries, and object code.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">After the build, all of the executables are located in the MTPACKAGE/MTCODE/BIN subdirectory. The README file in that directory identifies shell scripts that <B>CANNOT</B> be rebuilt if removed.</P>
+<P ALIGN="JUSTIFY"></P>
+<B><P ALIGN="JUSTIFY">Basic Methodology and Program Assumptions</P>
+</B><P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">The general representation of seismic sources is simplified by considering both a spatial and temporal point-source.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="CENTER"><IMG SRC="Image24.gif" WIDTH=180 HEIGHT=25></P>
+<P ALIGN="CENTER"></P>
+<I><P ALIGN="JUSTIFY">U<SUB>n</I></SUB>, is the observed n<SUP>th</SUP> component of displacement, <I>G<SUB>ni,j</I></SUB> is the n<SUP>th</SUP> component Green’s function for specific force-couple orientations, and <I>M<SUB>ij</I></SUB> is the scalar seismic moment tensor, which describes the strength of the force-couples. The general force-couples for a deviatoric moment tensor may be represented by three fundamental-faults, namely a vertical strike-slip, a vertical dip-slip, and a 45<SUP>0</SUP> dip-slip. The indices i and <I>j</I> refer to geographical directions. The above equation is solved using linear least squares for a given source depth. In this distribution only the deviatoric seismic moment tensor is solved for, and the inversion yields the <I>M<SUB>ij</I></SUB> which is decomposed into the scalar seismic moment, a double-couple moment tensor and a compensated linear vector dipole moment tensor. The decomposition is represented as percent double-couple (Pdc) and percent CLVD (PCLVD). Percent isotropic (PISO) is always zero for this deviatoric application. The double-couple is further represented in terms of the strike, rake and dip of the two nodal planes. The basic methodology and the decomposition of the seismic moment tensor is described in Jost and Herrmann (1989).</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Source depth is found iteratively by finding the solution that yields the largest variance reduction,</P>
+<P ALIGN="CENTER"><IMG SRC="Image25.gif" WIDTH=297 HEIGHT=58>,</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY"> where <I>data</I>, and <I>synth</I> are the data and Green’s function time series, respectively, and the summation is performed for all stations and components. </P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Another measure that is useful for determining source depth in regions where explosive events are unlikely is the RES/Pdc, the variance divided by the percent double-couple where, </P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="CENTER"><IMG SRC="Image26.gif" WIDTH=258 HEIGHT=41></P>
+<P ALIGN="JUSTIFY">Dividing the variance by the percent double-couple tends to deepen the minimum.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">It is assumed that the event location is well represented by the high frequency hypocentral location, and a low frequency centroid location is not determined. Second, the simplified representation above assumes that the source time history is synchronous for all of the moment tensor elements and that it may be approximated by a delta function. These assumptions are generally reasonable for M<SUB>w</SUB>&lt;7.5 events since long period waves (&gt;10-20s) are used. It is noted however, that for larger events these point-source assumptions break down in the period range employed and alternative finite fault approaches (e.g. Dreger and Kaverina, 2000) or longer period waves and larger source-station distances (e.g. Fukuyama and Dreger, 2000) are required.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Finally, it is assumed that the crustal model is sufficiently well known to explain low frequency wave propagation. This software package will not work in a region if calibrated velocity models are not available. Calibrating velocity models to obtain a robust catalog of Green’s functions is singly the most important step in successful seismic moment tensor applications. </P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">In California, we have found that three 1D velocity models are adequate for the recovery of the seismic moment tensor. Different monitoring regions may require fewer or more crustal velocity models.  Crustal velocity models that are sufficient for moment tensor analysis may be derived from models used to locate earthquakes, or by modeling of the broadband seismograms. There are numerous papers in the literature that describe how to model 3-component waveforms to constrain velocity structure and these (e.g. Dreger and Helmberger, 1990, 1993; Dreger and Romanowicz, 1994;  Rodgers et al., 1999; Zhao and Helmberger, 1991; Song et al., 1996) are some examples for getting started. Two- and three-dimensional models may be used provided that the codes used to synthesize the Green’s functions produces the full compliment of fundamental-fault responses.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">In the following the usage of the software is demonstrated through a series of three examples.</P>
+<P ALIGN="JUSTIFY"></P>
+<B><FONT SIZE=4><P ALIGN="CENTER">Example 1</P>
+</B></FONT><FONT SIZE=2>
+</FONT><P>The objective of example 1 is to become familiar with computing  Green’s function files, performing post-processing filter operations, and using the seismic moment tensor inversion code by inverting synthetic waveform data. The files necessary for example 1 are found in MTPACKAGE/EXAMPLE_1. You should use this directory as your working directory. In this directory you will find the following files; tdmt.config.linux, tdmt.config.sun, MODEL.socal, run_parallel, run_fkrsort, run_filter, b2s.par, mt_inv.in, and testdata[1-3].</P>
+
+<P>Before doing anything else set the system specific environment parameters. You will need to edit either the tdmt.config.linux or tdmt.config.sun files to set the environment variable MTPACKAGE to the full directory path of the software package. After making the changes use the source program to invoke the environment variables (i.e. source tdmt.config.linux). This command sets a number of environment variables such as paths to executables and Green’s function files, which will be clarified later on. </P>
+
+<B><I><P>Step 1: Compute Green’s functions</P>
+</B></I>
+<P>The file, MODEL.socal, contains a sample 1D velocity structure appropriate for the Sierra Nevada and Southern California regions. The contents of this file are listed below.</P>
+
+<P>MODEL.socal:</P>
+
+<FONT FACE="Courier New" SIZE=1><P>.F.                                                                             </P>
+<P>    0   64                                                                      </P>
+<P>GREEN.X</P>
+<P>    6.0      8.00       X  512 1024    0.500     5    Y</P>
+<P>    1    1    1    1    1    1    1    1    1    1    0                         </P>
+<P> 0.5500E+01 0.5500E+01 0.3180E+01 0.2400E+01   600.00    300.00</P>
+<P> 0.2500E+01 0.6300E+01 0.3640E+01 0.2670E+01   600.00    300.00</P>
+<P> 0.8000E+01 0.6300E+01 0.3640E+01 0.2670E+01   600.00    300.00</P>
+<P> 0.1900E+02 0.6700E+01 0.3870E+01 0.2800E+01   600.00    300.00</P>
+<P> 0.4000E+03 0.7800E+01 0.4500E+01 0.3300E+01   600.00    300.00</P>
+<P>    3                                                                           </P>
+<P>  0.4000000E+03  1.500000E+00         0</P>
+<P>    1  10000.0     30.0      2.9       2.5</P>
+<P ALIGN="JUSTIFY">100.00      0.0&#9; 10.0</P>
+</FONT>
+<P>&nbsp;</P>
+<P>The first line of MODEL.socal is a debugging flag. Keep it set to ".F.". The second line specifies the frequency range for debugging, do not change. GREEN.X is the name of the output file. The fourth line specifies alpha (small complex number for integration stability), source depth (km), the starting frequency indice (X), the total number of frequencies (a power of two), the total number of time points (2 times the number of frequencies), the sample rate (seconds), the total number of layers, and the number of processors the code will be run on (Y). The values of X and Y are set by the preprocessing script, run_parallel (usage is described below).</P>
+
+<P>Line 5 is a series of flags that turn on the various fundamental fault calculations. Do not change this line. Lines 6-10 list the model parameters such as layer thickness (km), p-velocity (km/s), s-velocity (km/s), density (g/cc), Q-alpha, and Q-beta. Note that the source must be located at an artificial boundary where the velocities above and below are the same (layers 2 and 3 , lines 7 and 8, in the example). Line 11 gives the layer number below the source. Line 12 does not need to be changed. Line 13 specifies the number of stations to calculate (1 in this case), and the phase velocity window of the integration. There is no need to change the phase velocity values 10000.0 and 30.0 (km/s), but you will want to be sure that the other two are less than the Rayleigh wave velocity of the model. The lines that follow define the distance to the station, a delay time (not currently implemented), and a reduction velocity. It is recommended that you keep the reduction velocity set to 8 km/s. Green's functions produced by the code with these settings will begin at t=distance/(reduction velocity). The file as it is currently set up will generate Green's function responses for stations located at a distance of 100 km.</P>
+
+<P>The first task of this example is to run the frequency-integration program (FKRPROG) through the run_parallel script to compute the Green’s functions used to invert the synthetic waveform data. <B>Very important note</B>; FKRPROG requires formatted input. Be careful not to change the column location of each field. Integer input is right justified, and floating point input should retain the position of the decimal point.</P>
+<B>
+</B><P>To generate the Green’s functions first run the run_parallel script. This script performs all of the steps required to generate the GREEN.* output files. The usage is:</P>
+
+<P>run_parallel number_of_cpus name_of_inputfile</P>
+
+<P>For example using the command &quot;run_parallel 1 MODEL.socal&quot; will first generate a new input file, MODEL1, which has the X and Y parameters each set to 1. Second, FKRPROG is launched generating an output file, GREEN.1  If the number of CPUs is larger than 1 (maximum value of 4) then multiple input files, MODEL[1-4], are created and FKRPROG is executed multiple times generating the corresponding GREEN.[1-4] files.</P>
+<B><I>
+</I><P>Step 2: Post-processing to create Green’s functions in usable ascii format</P>
+</B><P>Once the FKRPROG process(es) have finished the next step is to create ascii format, time domain Green’s function files that will be used by the inversion code. Another script, run_fkrsort, is used for this purpose. This script first calls the wvint9 program, which reads the GREEN.* file(s) and performs an inverse FFT and writes all of the displacement (cm) Green’s functions into a headerless binary file, vec. Note that options for wvint9 are hard-coded in the script. It is possible to output velocity (cm/s) Green’s functions instead of displacement (cm) by changing the ‘d’ to ‘v’ in the standard input statement for wvint9. Subsequent to the wvint9 post-processing the specific time series are then extracted from the vec file and an eight component ascii file is constructed. The ordering of the components are as follows, and the same as in Jost and Herrmann (1989); transverse component vertical strike-slip (tss) and vertical dip-slip (tds) faults, radial component vertical strike-slip (xss), vertical dip-slip (xds) and 45-degree dip-slip (xdd) faults, and vertical component vertical strike-slip (zss), vertical dip-slip (zds), and 45-degree (zdd) faults. </P>
+
+<P>The following is the usage for run_fkrsort.</P>
+
+<P>run_fkrsort filename_prefix distance depth number_of_distances</P>
+
+<P>In this example use ‘run_fkrsort socal 100 8 1’</P>
+
+<P>This script will output the files with the naming convention, {filename_prefix}{distance}d{depth}.disp. If the number_of_distances is not equal to 1 then the script assumes that the distance given is the closest distance, and the following distances are for intervals of 5 km. Note if you chose to modify run_fkrsort so that it outputs velocity (see above) you should also change the file extension for the Green’s function files to .vel.</P>
+<B><I>
+</I><P>Step 3: Filter Green’s functions</P>
+</B><P>Once the *.disp files have been created it is necessary to perform bandpass filtering using the run_filter script. The usage of run_filter is:</P>
+
+<P>run_filter  infile_name outfile_name  high_pass low_pass</P>
+
+<P>The infile_name is the output  filename from the run_fkrsort script. The outfile_name can be anything, but typically the infile_name with the ‘.disp’ truncated is used. The high_pass and low_pass filter corners are given in hertz. An acausal (two pass), 4<SUP>th</SUP> order butterworth filter is applied using SAC. The SAC commands are imbedded in the run_filter script.</P>
+
+<P>In this example the Green’s functions need to be bandpass filtered between 0.02 to 0.10 Hz. To do this use ‘run_filter socal100d8.disp socal100d8 0.02 0.10’</P>
+
+<B><P>Step 4: Run Moment Tensor Inversion</P>
+</B><P>Once the filtered Green’s function files have been computed you can use them to invert the test data for example 1. You will find three data files, testdata[1-3], in the working directory. These data files are listed in the provided <B><I>tdmt_invc</B></I> input file called mt_inv.in.</P>
+
+<P>mt_inv.in has the following format</P>
+
+<P>3  8 1 1&#9;&#9;&#9;<FONT SIZE=1>&lt;number of 3-component stations, source depth, distance weighting flag, plotting flag&gt;</P>
+</FONT><P>testdata1 100. 10. 0 120&#9;<FONT SIZE=1>&lt;data_filename, distance (km), azimuth (deg from north), sample-offset (Zcor), number_of_samples&gt;</P>
+</FONT><P>testdata2 100. 40. 0 120&#9;<FONT SIZE=1>&lt;ditto for station 2&gt;</P>
+</FONT><P>testdata3 100. 50. 0 120&#9;<FONT SIZE=1>&lt;ditto for station 3&gt;</P>
+</FONT><P>socal100d8 0 120&#9;&#9;<FONT SIZE=1>&lt;filtered GF_filename, zero-offset (always zero), number_of_samples (same as corresponding data&gt;</P>
+</FONT><P>socal100d8 0 120&#9;&#9;<FONT SIZE=1>&lt;ditto for station 2&gt;</P>
+</FONT><P>socal100d8 0 120&#9;&#9;<FONT SIZE=1>&lt;ditto for station 3&gt;</P>
+</FONT>
+<P>To run the moment tensor code execute the command &quot;$REDI_MT_BINDIR/tdmt_invc &gt; plot&quot;, where plot is a plot file, that may be converted to postscript using &quot;psigl &lt; plot &gt; plot.ps&quot; When tdmt_invc is run the following information is output to the screen, and to a log file (mt_inv_redi.out).</P>
+
+<P>Depth=8</P>
+<P>Station Information</P>
+<P>Station(0): testdata1  R=100.0km  AZI=10.0  W=1.000  Zcor=5</P>
+<P>Station(1): testdata2  R=100.0km  AZI=40.0  W=1.000  Zcor=5</P>
+<P>Station(2): testdata3  R=100.0km  AZI=50.0  W=1.000  Zcor=6</P>
+<P>Mo=9.13262e+19</P>
+<P>Mw=2.6</P>
+<P>Strike=20 ; 275</P>
+<P>Rake=39 ; 155</P>
+<P>Dip=70; 54</P>
+<P>Pdc=92</P>
+<P>Pclvd=8</P>
+<P>Piso=0</P>
+<P>Station(0)=99.418358  2.93047e-11</P>
+<P>Station(1)=99.254257  1.7449e-11</P>
+<P>Station(2)=83.429100  1.33789e-11</P>
+<P>VAR=2.34412e-15</P>
+<P>VR=95.81  (UNWEIGHTED)</P>
+<P>VR=95.81  (WEIGHTED)</P>
+<P>Var/Pdc=2.553e-17</P>
+<P>Quality=4</P>
+
+<P>Most of the output information is self-explanatory. W is the applied inverse distance weight. Since in this case the distance to the three test stations is the same the weight is the same. If the distances differ the more distant stations are given a larger weight. Zcor is the sample offset that the code obtains from cross-correlating the data with the fundamental fault Green’s functions (tss, tds, etc.). Zcor is a very important parameter that is used to align the data with the Green’s functions prior to inverting the data. Because the cross-correlation is against fundamental fault Green’s functions its value should be checked. Typically testing values that are +- 3 samples from the value obtained automatically is sufficient for finding the optimal value, but sometimes when the data is noisy or the velocity model used to construct the Green’s functions is very approximate a larger search may be necessary. The optimal value is evaluated using the variance reduction for each station, where Station(0)=99.418358 is the variance reduction for the first station. Try changing the value of the offset by editing the sample_offset field (Zcor) in the mt_inv.in file and rerunning the tdmt_invc program. Figure 1 shows the best result that is obtainable.</P>
+
+<P ALIGN="CENTER"><IMG SRC="Image27.jpg" WIDTH=468 HEIGHT=299></P><DIR>
+
+<P ALIGN="JUSTIFY">Figure 1. Example of <B><I>tdmt_invc</B></I> graphical output using Green’s functions for a source depth of 8 km. The data are shown as solid lines, the synthetics are dashed. For each station three-component data and synthetics are compared, and the azimuth (10, 40, and 50-degrees), the maximum three-component trace amplitude, and variance reduction (VR) are provided. Solution information includes the strike, rake and dip for the two possible double-couple planes, the scalar seismic moment, and Mw. Information about the moment tensor decomposition in terms of percent double-couple (DC), CLVD, and isotropic (ISO) are also listed. Fitting parameters such as the variance, the variance reduction (Var. Red), and the variance modulated by the percent double-couple (RES/Pdc). To obtain this result it was necessary to manually shift the Green’s functions for station 3 (testdata3) by one sample.</P>
+</DIR>
+
+<P>The output parameters VAR, VR, Var/Pdc and Quality are used to gauge the success of the inversion. VAR is the overall variance estimate, VR is the variance reduction (both unweighted and distance weighted estimates), Var/Pdc is the ratio of the variance to the percent double couple, quality is a subjective measure where 4 is the best and 1 is the worst. The higher the value of VR the better the solution. The Var/Pdc measure can also be very useful for areas where non-double-couple solutions are not expected.</P>
+
+<P>To determine the source depth inversions are performed over a range of source depths taking the best solution as either the one with the greatest overall variance reduction or smallest Var/Pdc measure. Figure 2 illustrates the variance reduction plotted against source depth for this synthetic test example.</P>
+
+<P ALIGN="CENTER"><IMG SRC="Image28.jpg" WIDTH=388 HEIGHT=327></P><DIR>
+
+<P ALIGN="JUSTIFY">Figure 2. Variance reduction is plotted against source depth. For each inversion the Green’s function alignment parameter has been optimized.</P>
+
+<P ALIGN="JUSTIFY">&nbsp;</P></DIR>
+
+<B><FONT SIZE=4><P ALIGN="CENTER">Example 2</P>
+</B></FONT><FONT SIZE=2>
+</FONT><P>The objective of this example is to apply the data processing scripts to broadband data for a real earthquake, generate suitable Green’s functions, and invert the data for the seismic moment tensor. In the MTPACKAGE/EXAMPLE_2 subdirectory you will find the following files; tdmt.config.linux, tdmt.config.sun, mt_inv.in, run_parallel, run_fkrsort, run_filter, MODEL.gil7, b2s.par. In addition, there are two subdirectories, DATA_PC and DATA_SUN, which contain SAC binary files for PC and SUN platforms, respectively. The files have the same functionality as in Example 1. MODEL.gil7 is an input file for FKRPROG to compute Green’s functions that are suitable for the Coast Ranges of central and northern California.</P>
+
+<P>Before doing anything else edit either the tdmt.config.linux or tdmt.config.sun files to set the environment variable MTPACKAGE to the full directory path of the software package, and then source the configuration file that is suitable for your operating environment.</P>
+
+<P>To begin copy the binary data files for stations BKS, CMB, KCC and PKD from the appropriate data directory to your working directory. These stations will be used to illustrate the usage of the program. The following files should have been copied;</P>
+<DIR>
+<DIR>
+
+<P>19980812141000.BKS.BHE 19980812141000.BKS.BHN 19980812141000.BKS.BHZ</P>
+<P>19980812141000.CMB.BHE 19980812141000.CMB.BHN 19980812141000.CMB.BHZ<BR>
+19980812141000.KCC.BHE 19980812141000.KCC.BHN 19980812141000.KCC.BHZ</P>
+<P>19980812141000.PKD.BHE 19980812141000.PKD.BHN 19980812141000.PKD.BHZ</P>
+</DIR>
+</DIR>
+
+<P>Use SAC to verify that the files are intact.</P>
+
+<B><P>Step 1: Instrument correct and filter waveform data and write data to ascii files</P>
+</B><P>The first step is to produce the ascii, three-component data files used by tdmt_invc. This step involves acquiring the pole-zero instrument response, using SAC to demean, deconvolve instrument response, integrate to displacement (cm), rotate to transverse and radial components, bandpass filter, resample to 1 sps, and finally write the ascii data files. All of this is done using a single script, tdmt_redi_prepdata, which is located in the MTPACKAGE/MTCODE/BIN directory. A detailed explanation of the processing script is not given, but users are encouraged to examine it to understand the SAC processing steps. Note that the instrument response database file, instr.resp, is read by the get_resp program which then writes the SAC instrument pole-zero files that are used to deconvolve the instrument response. The path to instr.resp is set using the REDI_MT_RESP environment variable in either the tdmt.config.linux or tdmt.config.sun configuration files. The program assumes that the pole-zero responses contained in instr.resp convert from digital units to velocity in m/s. </P>
+
+<P>The usage of tdmt_redi_prepdata is shown below for BKS (the REDI_MT_BINDIR variable provides the path to the executable directory and is set by sourcing the configuration files). The execution will have to be repeated for each of the stations.</P>
+
+<FONT SIZE=3><P>$REDI_MT_BINDIR/tdmt_redi_prepdata 19980812141000 BKS 1998 224 36.755 -121.464 0.02 0.05</P>
+</FONT>
+<P>The first command line argument is the filename prefix, which consists of the year (1998), month (08), day (12), hour (12), minute (14) and seconds (00) of the start of the record. This is followed by the station name (BKS), the year, the day of the year (224), the latitude (36.775) and longitude (-121.464) of the event, and the highpass (0.02) and lowpass (0.05) filter parameters. In this case we are using 0.02 to 0.05 Hz waves, which have been found to be effective in the regional distance range (e.g. Pasyanos et al., 1996; Fukuyama and Dreger, 2000). You can use any frequency passband you wish provided that both the data and Green’s functions are processed using the same filter, and the velocity structure that is used to generate the Green’s functions is a good representation of structure at the wave lengths that are being modeled. In practice we use a magnitude dependent frequency passband, where for M&lt;4.0 the passband is 0.02 to 0.1 Hz, for 4.0 &lt;= M &lt; 5.0 the passband is 0.02 to 0.05 Hz, for M&gt;= 5.0 the passband is 0.01 to 0.05 Hz. For very large events (M&gt;7.5) a passband of 0.005 to 0.02 Hz is desirable (Fukuyama and Dreger, 2000).</P>
+
+<P>After running tdmt_redi_prepdata for each station make a note of the azimuth and distance that is output to the screen. The values obtained for BKS are:</P>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<P>           az = 3.314721e+02  &lt;degrees from north&gt;</P>
+<P>         dist = 1.420443e+02  &lt;distance in km&gt;</P>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<P>After running the script for the three stations you will have created the files, BKS_f0.05.data, CMB_f0.05.data, KCC_f0.05.data, PKD_f0.05.data.</P>
+<P ALIGN="JUSTIFY"></P>
+<B><P ALIGN="JUSTIFY">Step 2: Generate Green’s functions for a suite of distances and source depths</P>
+</B><P ALIGN="JUSTIFY">The next step is to generate a suite of Green’s functions over a range of source depth for each source-station distance. The file MODEL.gil7 has been setup to generate Green’s functions for 16 distances. Typically the distances are rounded to the nearest interval of 5 km. You can generate the gil7 synthetics using the following sequence of commands;</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">run_parallel 1 MODEL.gil7</P>
+<P ALIGN="JUSTIFY">run_fkrsort gil7_ 125 8 16</P>
+<P ALIGN="JUSTIFY">run_filter gil7_*d*.disp gil7_*d* 0.02 0.05</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Note that you will need to explicitly enter the distance and depth in the spaces denoted by asterisks when filtering the Green’s functions, and that nested foreach loops will be useful. This method for computing Green’s functions may be used to compute a catalog of prefiltered Green’s functions that may be used when automating these procedures as described in the next section.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Using the calculated Green’s functions, the processed waveform data and the procedure for using tdmt_invc outlined in Example 1 determine the best fitting moment tensor solution for this event.  Figure 3 shows the automatic cross-correlation results using three stations (BKS, CMB and PKD), and Figure 4 shows the best result obtained when KCC is added and inversions were performed with Green’s functions for a range of source depth.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="CENTER"><IMG SRC="Image29.jpg" WIDTH=432 HEIGHT=276></P>
+<P ALIGN="JUSTIFY">Figure 3 shows the result that should be obtained using Green’s functions for a source depth of 8 km and the automatic cross-correlation feature of the code for the three stations BKS, CMB and PKD.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="CENTER"><IMG SRC="Image30.jpg" WIDTH=432 HEIGHT=276></P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Figure 4 this is the best solution obtained testing source depths of 4.5, 8, 11, 14 km for stations BKS, CMB, PKD and KCC. The depth obtained is 11 km (though it is not well resolved in this particular case).</P>
+<P ALIGN="JUSTIFY"> </P>
+<B><FONT SIZE=4><P ALIGN="CENTER">Realtime Processing</P>
+</FONT><P ALIGN="JUSTIFY"></P>
+</B><P ALIGN="JUSTIFY">As discussed previously the runtime properties of the software are controlled by the &quot;tdmt.config.*&quot; configuration files, located in each of the example subdirectories. All of the environment variables are described below,</P>
+<P ALIGN="JUSTIFY"></P><DIR>
+<DIR>
+
+<FONT SIZE=2><P>setenv REDI_MT_BINDIR                 &#9;sets the executable directory</P>
+<P>setenv REDI_MT_PROG_1                   &#9;defines the launching program</P><DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<P>setenv REDI_MT_DATDIR              &#9;sets the directory where individual event working directories are created</P></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<P>setenv REDI_MT_LOGDIR                  &#9;sets the directory where results are logged.</P>
+<P>setenv REDI_MT_SYNTHDIR                 &#9;sets the directory where Green’s functions are located</P>
+<P>setenv REDI_MT_EXTRACT_OPTIONS        defines runtime flags for qdata data extraction program</P><DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<P>setenv REDI_MT_DEBUG_OPTION          &#9;turns on debugging output</P></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<P>setenv REDI_MT_STATLIST                 &#9;defines the station coordinate file</P>
+<P>setenv REDI_MT_RESP                     &#9;&#9;defines the instrument response (pole-zero file)</P><DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<P>setenv REDI_MT_DATASTREAM               &#9;defines data stream to be used (BH and LH streams are supported in this release)</P></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<P>setenv REDI_MT_PLOT                     &#9;flag for plot output (1=yes; 0=no)</P>
+
+<P># Program specific variables</P>
+<P>setenv REDI_MT_PROG1_PAGE               &#9;flag for paging results (1=yes; 0=no)</P><DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<P>setenv REDI_MT_PROG1_GFLOC              &#9;sets the directory where Green’s functions are located (same as REDI_MT_SYNTHDIR)</P></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<P>setenv REDI_MT_PROG1_STATMAX            number of REDI approved stations</P>
+<P>`</P><DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+
+<P>setenv REDI_MT_PROG1_GETLIST &#9;list of REDI approved stations (stations not on this list will not be processed, may include stations that are not moment tensor processing approved)</P></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<P>setenv REDI_MT_PROG1_NSTAT               &#9;number of moment tensor approved stations</P>
+<P>setenv REDI_MT_PROG1_STATLIST           &#9;list of moment tensor approved stations</P>
+</FONT><P ALIGN="JUSTIFY"></P></DIR>
+</DIR>
+
+<P ALIGN="JUSTIFY">Note that the REDI_MT_STATLIST and REDI_MT_PROG1_STATLIST environment variables are extremely important in defining the subset of available stations to use in the automatic inversion. The first environment variable defines the path to a file that contains a list of operational stations and their coordinates. By removing a problematic station from the station list the station is effectively removed from all seismic moment tensor processing. Although a station is operational, and included on the REDI_MT_STATLIST, it may not be suitable for moment tensor analysis. For example, stations that are located inside of buildings, have substantial site response, or whose source-station paths have complex local and regional structure may not perform well using 1D velocity model Green’s functions. Therefore a second environment variable, REDI_MT_PROG1_STATLIST, is used to define those stations that perform well under the assumptions of the methodology. In sum, REDI_MT_STATLIST is used for the extraction of data and preprocessing in the SAC data format, and can be used to communicate to the program which stations are available as network conditions fluctuate. Only stations on the REDI_MT_PROG1_STATLIST qualify for subsequent processing and are used by the inversion routine.</P>
+<P ALIGN="JUSTIFY"> </P>
+<B><P ALIGN="JUSTIFY">Automated Program Flow</P>
+</B><P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">There are two primary parts in the automation of these routines as illustrated in Figure 5. The first is the triggering based on some external event hypocenter information obtained via email or other method, the creation of the working directory, and creation of the input file for subsequent processing. The second part is executing a wrapper program that retrieves and processes data, copies the correct Green’s functions into the working directory, and executes the inversion routine keeping track of the best solution.</P>
+<P ALIGN="JUSTIFY"></P>
+<B><P ALIGN="JUSTIFY">Step 1: Triggering</P>
+</B><P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">One way to trigger processing is to scan for incoming email messages. For example, the UNIX cron function below may be used.</P>
+<P ALIGN="JUSTIFY"> </P>
+<P>0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57 * * * * /data/10/dreger/AUTOMT/tdmt_trigger 1&gt;/data/10/dreger/AUTOMT/NEWEVENT/trig.msgs 2&gt;&amp;1</P>
+
+<P>This cron function will execute the tdmt_trigger script every 3 minutes and write the output to a ‘trig.msgs’ messages file, which can be analyzed for relevant event information. The tdmt_trigger script is in MTPACKAGE/MTCODE/BIN. This script initiates the UNIX mail reader program (mailx), scans for suitable messages (those coming from redi in this example), and saves the messages in a file called redi_trigger. The program, tdmt_msgs_scan, then opens the redi_trigger file, and scans for event email messages, retrieves the event information and creates an event file in a staging subdirectory, GUIDE. The path to the GUIDE subdirectory is defined by the REDI_MT_DATDIR environment variable in tdmt.config.*. If files are present in GUIDE a new event directory is created and a wrapper program input file (tdmt_redi_sched.in) is copied to the new event directory, and the wrapper program, tdmt_redi_sched, is executed. </P>
+
+<P>This is just one example of how to automated this code, and it will be necessary to modify the above procedures for your specific operating environment.</P>
+<P ALIGN="JUSTIFY"></P>
+<B><P ALIGN="JUSTIFY">Step 2: Scheduling (The Wrapper Program)</P>
+<P ALIGN="JUSTIFY"></P>
+</B><P ALIGN="JUSTIFY">tdmt_redi_sched is a wrapper program that reads the tdmt_redi_sched.in file, and executes a series of shell scripts and codes (tdmt_redi_getdata, tdmt_redi_prepdata, tdmt_redi_prepsyn, tdmt_invc) (i.e. Figure 5). tdmt_redi_sched.c will need to be modified for your specific monitoring situation, to account for different crustal velocity models, different frequency passbands, changes to the Green’s function distance and depth ranges, and the specifics on how you want to report the results.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">The input file for tdmt_redi_sched, namely tdmt_redi_sched.in, has the following format.</P>
+<P ALIGN="JUSTIFY"></P><DIR>
+<DIR>
+
+<P ALIGN="JUSTIFY">tdmt.config.linux 1998 224 14 10 0.0 36.755 -121.464 5.0 4.8 9999</P>
+<P ALIGN="JUSTIFY"></P></DIR>
+</DIR>
+
+<P ALIGN="JUSTIFY">The first field is the name of the run-time configuration file, the year (1998), julian day (224), hour (14), minute (10), and seconds (00) of the event, the latitude (36.755), longitude (-121.464), initial source depth (5.0), magnitude (4.8), and an event id number (9999). The origin time only needs to be approximate as the data are optimally aligned with the Green’s functions using a cross-correlation function. In practice the origin time is truncated to the preceding minute (seconds field is always zero). The hypocenter information in tdmt_redi_sched.in is externally derived and delivered to the working directory via email or other method.</P>
+<P ALIGN="JUSTIFY"> </P>
+<P ALIGN="JUSTIFY">The first script that is executed is tdmt_redi_getdata, which extracts waveform data from the archive and translates it to SAC format for subsequent processing. This script will need to be modified for the specific data retrieval method used on your system.  In the BSL application we retrieve data in miniseed format and use the ms2sac program to translate miniseed to SAC. The BSL specific code has been commented out of the script and code that extracts the SAC files from MTPACKAGE/Example_2 has been added to facilitate Example 3 illustrating the usage of tdmt_redi_sched.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Next, based on the data availability (REDI_MT_STATLIST environment variable) and the list of stations that may be used to compute moment tensors (REDI_MT_PROG1_STATLIST) the data for the three closest stations in 50-400 km distance range is processed.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">The tdmt_redi_prepdata script used in Examples 1 &amp; 2 is called to create the ascii files containing the processed  (instrument deconvolved, integrated to ground displacement (cm), bandpass filtered, and resampled to 1 sps) waveform data. All data processing is accomplished using SAC. This script requires an instrument response database whose location is set using the REDI_MT_RESP environment variable in the tdmt.config.linux file.</P>
+<P ALIGN="JUSTIFY"> </P>
+<P ALIGN="JUSTIFY">The tdmt_redi_prepsyn script uncompresses prefiltered Green's functions files for the relevant source-station distances, and all source depths into the event subdirectory. The code is currently designed to use the sc and gil7_ velocity models that are expected to be stored in compressed format in the LP10SYN (0.02 to 0.10 Hz), LP20SYN (0.02 to 0.05 Hz) and LP5020SYN (0.02 to 0.05 Hz) subdirectories. The addition of new velocity models will require modification of the tdmt_redi_sched program, and the computation of new Green's functions.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Finally, with the processed data files and Green’s function files in the working directory tdmt_redi_sched loops over source depth. For each source depth iteration a tdmt_invc input file, mt_inv.in is created, tdmt_invc is then executed, and the results are stored in a log file, mt_inv_redi.out. After all of the inversions have been performed this file is read to find the source depth that yielded the greatest variance reduction, and the corresponding source information is written to the pager.file, which is then emailed or paged to interested parties. Of course, this latter step of disseminating the results will need to be modified for your application. One final note, the REDI_MT_PAGE environment variable controls whether or not to perform this final dissemination stage.</P>
+<P ALIGN="CENTER"><IMG SRC="Image31.gif" WIDTH=344 HEIGHT=634></P><DIR>
+<DIR>
+
+<P ALIGN="JUSTIFY">Figure 5. Automated moment tensor program flow. All of the processing scripts are in the $MTPACKAGE/MTCODE/BIN directory.</P>
+<FONT SIZE=2><P ALIGN="JUSTIFY"> </P></DIR>
+</DIR>
+
+</FONT><FONT SIZE=4><P ALIGN="CENTER">Example 3</P>
+</FONT><P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">This example will illustrate the usage of tdmt_redi_sched. Change directory to MTPACKAGE/Example_3. There should be four files, tdmt.config.linux, tdmt.config.sun, example3.stat and tdmt_redi_sched.in. tdmt_redi_sched.in is the input file used by tdmt_redi_sched, and example3.stat is a list of stations that tdmt_redi_sched will process (defined by the REDI_MT_STATLIST environment variable). </P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Prefiltered Green’s function files needed for this example have been placed in the LP10SYN, LP20SYN, and LP5020SYN subdirectories in MTPACKAGE for this exercise. This is an incomplete set and you will need to construct a complete set of Green’s functions for your study area before applying this routine to other earthquakes.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Before doing anything else edit either the tdmt.config.linux or tdmt.config.sun files to set the environment variable MTPACKAGE to the full directory path of the software package, and source the configuration file that is appropriate for your system.</P>
+<P ALIGN="JUSTIFY"></P>
+<B><P ALIGN="JUSTIFY">The Only Step</P>
+</B><P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">In the working directory execute the tdmt_redi_sched program. I.e., </P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">$REDI_MT_BINDIR/tdmt_redi_sched</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Code progress is written to the screen.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">If everything runs you will find the following information in the pager.file that is created.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">REDIMT:9999 5.1 19980812141000 36.76 -121.46 5.0 5.87E+23 49,-10,82  141,-172,80 14 VR94.1</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">This is the format of an email message that may be sent out if the REDI_MT_PAGE parameter is set to 1 in the tdmt.config.linux configuration file. It shows a REDIMT identifier, the event id number, the Mw, the year, month, day, hour, minute, seconds as a string, the latitude, the longitude, the initial depth, the scalar moment (dyne cm), strike,rake,dip for both planes, the depth determined from the moment tensor inversion, and the composite variance reduction.</P>
+<P ALIGN="JUSTIFY"></P><DIR>
+<DIR>
+
+<FONT SIZE=4><P ALIGN="CENTER">Concluding Remarks</P>
+</FONT><P ALIGN="JUSTIFY"></P></DIR>
+</DIR>
+
+<P ALIGN="JUSTIFY">I hope that you find this seismic moment tensor package helpful for your seismic monitoring and scientific needs.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Send comments, bug reports and other inquiries to <A HREF="mailto:dreger@seismo.berkeley.edu">dreger@seismo.berkeley.edu</A>.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Updates to this package will be posted to <A HREF="http://www.seismo.berkeley.edu/~dreger">www.seismo.berkeley.edu/~dreger</A>.</P>
+<P ALIGN="JUSTIFY"></P>
+<B><P ALIGN="JUSTIFY">Please add the following acknowledgement to any WWW or technical journal publications that use moment tensor results obtained using this software. &quot;Moment tensors were computed using the tdmt-invc package developed by Douglas Dreger of the Berkeley Seismological Laboratory, and Green’s functions were computed using the FKRPROG software developed by Chandan Saikia with URS.&quot;</P>
+</B><P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<P ALIGN="JUSTIFY">&nbsp;</P>
+<B><FONT SIZE=4><P ALIGN="CENTER">References and Supplemental Reading</P>
+</B></FONT><P ALIGN="JUSTIFY"></P>
+<B><P ALIGN="JUSTIFY">Papers illustrating velocity model calibration:</P>
+</B><P ALIGN="JUSTIFY"></P><DIR>
+
+<P ALIGN="JUSTIFY">Dreger, D. S., and D. V. Helmberger (1990). Broadband Modeling of Local Earthquakes, <I>Bull. Seism. Soc. Am</I>., 80 1162-1179.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Dreger, D. S., and D. V. Helmberger (1993), Determination of Source Parameters at Regional Distances with Single Station or Sparse Network Data, <I>Journ. Geophys. Res</I>., 98, 8107-8125.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Dreger, D. and B. Romanowicz (1994). Source Characteristics of Events in the San Francisco Bay Region, <I>USGS Open-file report</I>, 94-176, 301-309.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Helmberger, D. V., and G. Engen (1980). Modeling the long-period body waves from shallow earthquakes at regional distances, <I>Bull. Seism. Soc. Am</I>., 70, 1699-1714.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Rodgers, A., W. Walter, R. Mellors, A. Al-Amri, Y. Zhang (1999). Lithospheric structure of the Arabian Shield and Platform from complete regional waveform modelling and surface wave group Velocities, <I>Geophys. Journ. Int</I>., 138, 871-878.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Saikia, C. K. (1994). Modified frequency-wavenumber algorithm for regional seismograms using Filon’s quadrature; modeling of L<SUB>g</SUB> waves in eastern North America, <I>Geophys. Journ. Int</I>., 118, 142-158.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Song, X., L. Zhao and D. V. Helmberger (1996). Broad-band modelling of regional seismograms; the Basin and Range crustal structure, <I>Geophys. Journ. Int</I>., 125, 15-29.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Zhao, L., and D. V. Helmberger (1991). Broadband modelling along a regional shield path, <I>Geophys. Journ. Int</I>., 105, 301-312.</P>
+<P ALIGN="JUSTIFY"></P>
+<B><P ALIGN="JUSTIFY">Papers describing various moment tensor applications:</P>
+<P ALIGN="JUSTIFY"></P>
+</B><P>Dreger, D., and A. Kaverina (2000). Seismic remote sensing for the earthquake source process and near-source strong shaking: A case study of the October 16, 1999 Hector Mine earthquake, Geophys. Res. Lett., 27, 1941-1944.</P>
+<P ALIGN="JUSTIFY"></P>
+<P>Fukuyama, E., and D. Dreger (2000). Performance test of an automated moment tensor determination system for the future "Tokai" earthquake, Earth Planets Space, 52, 383-392.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Gee, L. S., D. S. Neuhauser, D. S. Dreger, M. Pasyanos, R. A. Uhrhammer, and B. Romanowicz (1996), Real-Time Seismology at UC Berkeley: The Rapid Earthquake Data Integration Project, <I>Bull. Seism. Soc. Am</I>., 86, 936-945.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Jost, M. L., R. Herrmann (1989). A student's guide to and review of moment tensors, <I>Seism. Res. Lett</I>., 60, 37-57.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Pasyanos, M. E., D. S. Dreger, and B. Romanowicz (1996), Towards Real-Time Determination of Regional Moment Tensors, <I>Bull. Seism. Soc. Am</I>., 86, 1255-1269.</P>
+<P ALIGN="JUSTIFY"></P>
+<P ALIGN="JUSTIFY">Romanowicz, B. D. Dreger, M . Pasyanos, and R. Urhammer (1993). Monitoring of Strain Release in Central and Northern California Using Broadband Data, <I>Geophys. Res. Let</I>., 20, 1643-1646.</P></DIR>
+</BODY>
+</HTML>

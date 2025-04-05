@@ -1,0 +1,62 @@
+#! /bin/csh
+# Shell to filter Green's functions Using SAC
+# Remember to set hcrn and lcrn correctly
+# Do not change dt and npts
+#
+set   dt=0.50
+set npts=1024
+set lcrn=$3
+set hcrn=$4
+#
+#
+# Begin windowing
+$REDI_MT_BINDIR/fromHelm < $1 > tmp2
+$REDI_MT_BINDIR/window nt=$npts nx=8 nv=1 v0=0 < tmp2 > tmp3
+$REDI_MT_BINDIR/bin2sac par=./b2s.par npts=$npts dt=$dt < tmp3 > tss
+$REDI_MT_BINDIR/window nt=$npts nx=8 nv=1 v0=1 < tmp2 > tmp3
+$REDI_MT_BINDIR/bin2sac par=./b2s.par npts=$npts dt=$dt < tmp3 > tds
+$REDI_MT_BINDIR/window nt=$npts nx=8 nv=1 v0=2 < tmp2 > tmp3
+$REDI_MT_BINDIR/bin2sac par=./b2s.par npts=$npts dt=$dt < tmp3 > xss
+$REDI_MT_BINDIR/window nt=$npts nx=8 nv=1 v0=3 < tmp2 > tmp3
+$REDI_MT_BINDIR/bin2sac par=./b2s.par npts=$npts dt=$dt < tmp3 > xds
+$REDI_MT_BINDIR/window nt=$npts nx=8 nv=1 v0=4 < tmp2 > tmp3
+$REDI_MT_BINDIR/bin2sac par=./b2s.par npts=$npts dt=$dt < tmp3 > xdd
+$REDI_MT_BINDIR/window nt=$npts nx=8 nv=1 v0=5 < tmp2 > tmp3
+$REDI_MT_BINDIR/bin2sac par=./b2s.par npts=$npts dt=$dt < tmp3 > zss
+$REDI_MT_BINDIR/window nt=$npts nx=8 nv=1 v0=6 < tmp2 > tmp3
+$REDI_MT_BINDIR/bin2sac par=./b2s.par npts=$npts dt=$dt < tmp3 > zds
+$REDI_MT_BINDIR/window nt=$npts nx=8 nv=1 v0=7 < tmp2 > tmp3
+$REDI_MT_BINDIR/bin2sac par=./b2s.par npts=$npts dt=$dt < tmp3 > zdd
+sac << sacend
+setbb HCRN $hcrn
+getbb HCRN
+setbb LCRN $lcrn
+getbb LCRN
+cut 0 200
+read tss tds xss xds xdd zss zds zdd
+bp co %LCRN %HCRN p 2
+interpolate delta 1.0
+write over
+quit
+sacend
+#
+#
+$REDI_MT_BINDIR/sac2bin in=tss out=tmp
+\mv tmp tss
+$REDI_MT_BINDIR/sac2bin in=tds out=tmp
+\mv tmp tds
+$REDI_MT_BINDIR/sac2bin in=xss out=tmp
+\mv tmp xss
+$REDI_MT_BINDIR/sac2bin in=xds out=tmp
+\mv tmp xds
+$REDI_MT_BINDIR/sac2bin in=xdd out=tmp
+\mv tmp xdd
+$REDI_MT_BINDIR/sac2bin in=zss out=tmp
+\mv tmp zss
+$REDI_MT_BINDIR/sac2bin in=zds out=tmp
+\mv tmp zds
+$REDI_MT_BINDIR/sac2bin in=zdd out=tmp
+\mv tmp zdd
+cat tss tds xss xds xdd zss zds zdd > tmp2
+$REDI_MT_BINDIR/mkHelm ntr=8 nt=200 dt=1.0 format="(6e12.5)" < tmp2 > $2
+\rm tss tds xss xds xdd zss zds zdd tmp*

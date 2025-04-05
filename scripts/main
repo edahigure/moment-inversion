@@ -1,0 +1,295 @@
+#!/bin/bash
+#por si hay problemas de memoria con sac
+#valgrind --tool=memcheck --leak-check=yes sac 
+
+rm *.helm
+rm *.in
+
+source ~/.bashrc
+
+HOME=/Users/edahi/Desktop/moment_inversion
+export REDI_MT_BINDIR=/Users/edahi/Desktop/moment_inversion/MTPACKAGE_new/MTCODE/BIN
+
+
+data_dir=/Users/edahi/Desktop/moment_inversion/done_2003-04-15-mw55-gulf-of-california
+
+cd ${data_dir}
+
+ls  $data_dir/*.BHE.*.SAC > listE
+ls  $data_dir/*.BHN.*.SAC > listN
+ls  $data_dir/*.BHZ.*.SAC > listZ
+
+
+declare -a nameE 
+declare -a nameN 
+declare -a nameZ 
+
+
+contE=0;
+for next in `cat listE`
+do
+nameE[$contE]=$next
+contE=$((contE+1))
+done
+
+
+contN=0;
+for next in `cat listN`
+do
+nameN[$contN]=$next
+contN=$((contN+1))
+done
+
+
+contZ=0;
+for next in `cat listZ`
+do
+nameZ[$contZ]=$next
+contZ=$((contZ+1))
+done
+
+
+if (($contN != $contE &&  $contN != $contZ && $contE != $contZ)); then
+echo  not all N E Z components present.
+exit
+fi
+
+echo ${nameE[1]}
+
+year=2003
+month=04
+day=15
+hour=08
+min=21
+sec=17
+
+EVLA=25.0148
+EVLO=-109.4443
+z=10
+
+MW=5.5
+
+
+echo $year $month $day $hour $min $sec $EVLA $EVLO $z $MW 
+
+
+read op<<< `${HOME}/bin_eg/lesser_than $MW 4`
+
+if [ ${op} = 1 ]
+   then
+  LCRN=.02
+  HCRN=.1
+fi
+
+
+read op1<<< `${HOME}/bin_eg/greater_equal $MW 4`
+read op2<<< `${HOME}/bin_eg/lesser_than $MW 5`
+
+if [ ${op1} = 1 ] && [ ${op2} = 1 ]
+   then
+
+  LCRN=.02
+  HCRN=.05
+
+fi
+
+
+read op1<<< `${HOME}/bin_eg/greater_equal $MW 5`
+read op2<<< `${HOME}/bin_eg/lesser_than $MW 7.5`
+
+if [ ${op1} = 1 ] && [ ${op2} = 1 ]
+   then
+  LCRN=.01
+  HCRN=.05
+
+fi
+
+
+read op<<< `${HOME}/bin_eg/greater_equal $MW 7.5`
+
+if [ ${op} = 1 ]
+   then
+  LCRN=.005
+  HCRN=.02
+
+fi
+
+echo $LCRN $HCRN
+
+
+
+DeltaT=$((6*60))
+
+
+
+${HOME}/scripts/copy_data $year $month $day $hour $min $sec $DeltaT
+${HOME}/scripts/copy_data_ssn $year $month $day $hour $min $sec $DeltaT
+
+
+
+#crea el arreglo de las estaciones presentes
+
+stat_list="${data_dir}/data/stat.list"
+Nsta=0;
+str_tmp=a
+
+#cuenta cuantas estaciones hay
+
+for next in `cat ${stat_list}`
+do
+  
+   station_tmp=($(echo $next | tr "_" "\n"))
+   read op<<< `${HOME}/bin_eg/strcmp ${station_tmp[0]} ${str_tmp}`
+   
+   if [ ${op} -eq 0 ]
+      then
+      station[$Nsta]=${station_tmp[0]}
+      Nsta=$((Nsta+1))
+      str_tmp=${station_tmp[0]}
+   fi
+done
+
+
+echo station array ${station[@]}
+echo NSta $Nsta
+
+
+
+rm listE listN listZ
+
+
+DT_int=1.0
+
+for((k=0;k<$Nsta;k++))
+do
+${HOME}/scripts/deconv ${station[k]}  $EVLA $EVLO $LCRN $HCRN $DT_int
+done
+
+
+echo jday ${jday}
+echo year ${year}
+
+
+ls  $data_dir/data/$year.$jday*.*HE.sac_deconv > listE_A
+ls  $data_dir/data/$year.$jday*.*HN.sac_deconv > listN_A
+ls  $data_dir/data/$year.$jday*.*HZ.sac_deconv > listZ_A
+
+
+declare -a nameE 
+declare -a nameN 
+declare -a nameZ
+
+
+contE=0;
+for next in `cat listE_A`
+do
+nameE[$contE]=$next
+contE=$((contE+1))
+done
+
+
+contN=0;
+for next in `cat listN_A`
+do
+nameN[$contN]=$next
+contN=$((contN+1))
+done
+
+
+contZ=0;
+for next in `cat listZ_A`
+do
+nameZ[$contZ]=$next
+contZ=$((contZ+1))
+done
+
+
+if (($contN != $contE &&  $contN != $contZ && $contE != $contZ)); then
+echo  not all N E Z components present.
+exit
+fi
+
+
+#imprime la primera parte del archivo mt_inv.in
+
+
+zcor=0
+TWIND=250 
+
+
+declare -a R_array
+
+rm mt_inv.in
+echo ${contE} $z 1 1 >> mt_inv.in
+
+
+#calcula la distancia y el azimut
+
+cont=0
+for next in `cat listE_A`
+do
+
+
+echo `${HOME}/bin_eg/dist_azi_sac ${next}  ${EVLO} ${EVLA}`
+
+delta_azimuth=($(echo `${HOME}/bin_eg/dist_azi_sac ${next}  ${EVLO} ${EVLA}` | tr " " "\n"))
+
+echo ${delta_azimuth[@]}
+
+IFS=' '  read  dist <<< `${HOME}/bin_eg/distance_sac ${next}  ${EVLO} ${EVLA}`
+echo $dist
+
+splited_E=($(echo ${nameE[cont]} | tr "." "\n"))
+echo ${splited_E[@]}
+
+
+R_array[${cont}]=${dist}
+echo  ${splited_E[5]}.helm ${delta_azimuth[@]} ${zcor} $TWIND 
+echo  ${splited_E[5]}.helm ${delta_azimuth[@]} ${zcor} $TWIND >> mt_inv.in
+cont=$((${cont}+1))
+
+done
+
+
+numR=${cont}
+echo numR: $numR
+
+
+gf_name="jp"
+
+
+gf_in="MODEL.gil"
+NN_GF=1024
+DT_GF=0.5
+
+
+for((k=0;k<$Nsta;k++))
+do
+
+  R=${R_array[${k}]}
+  echo k $k  R $R
+
+  startdist=${R}
+  distitr=1
+  ddist=1
+
+  echo model_exe ${gf_in}_$k $NN_GF $DT_GF $z $startdist $distitr $ddist
+
+  ${HOME}/bin_eg/model_exe ${gf_in}_$k $NN_GF $DT_GF $z $startdist $distitr $ddist
+
+
+  rm GREEN.1
+  #echo REDI_MT_BINDIR: ${REDI_MT_BINDIR}
+
+  ${HOME}/bin_ito/FKRPROG <${gf_in}_$k
+  ${HOME}/bin_ito/run_fk2ascii $z $startdist  $distitr $ddist $NN_GF $DT_GF 
+  ${HOME}/bin_ito/run_filt_syn $z $startdist $distitr $ddist $LCRN $HCRN  $NN_GF $(($NN_GF/2)) $DT_GF ${gf_name}  
+    
+  echo ${gf_name}${R_array[$k]}d$z 0 $TWIND >> mt_inv.in 
+
+
+done
+
+$REDI_MT_BINDIR/tdmt_invc>plot_$year$month$day$hour$min$sec
+$REDI_MT_BINDIR/psigl<plot_$year$month$day$hour$min$sec>plot_$year$month$day${hour}f$LCRN-${HCRN}_alpha${alpha}.ps
+

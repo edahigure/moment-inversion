@@ -1,0 +1,80 @@
+#! /bin/csh
+set path=($path $REDI_MT_BINDIR)
+set DSTRM = `printenv REDI_MT_DATASTREAM`
+echo $DSTRM
+##
+## Make sure these parameters are correct
+##
+set NAME="$1"
+set STAT="$2"
+set JDYEAR="$3.$4"
+set EVLA=$5
+set EVLO=$6
+set LCRN=$7
+set HCRN=$8
+if("$DSTRM" == "BH") then
+set PZCMP=VBB
+else if("$DSTRM" == "LH") then
+set PZCMP=LP_
+endif
+## Change the time value if the instrument response changed on
+## the date of the earthquake
+set TIME=2358.9
+#
+# Create Pole-Zero Files
+get_resp name=$STAT comp=E{$PZCMP} date=$JDYEAR
+get_resp name=$STAT comp=N{$PZCMP} date=$JDYEAR
+get_resp name=$STAT comp=Z{$PZCMP} date=$JDYEAR
+#
+# Remove instrument response and filter data
+sac << eof
+setbb comp1 E
+setbb comp2 N
+setbb comp3 Z
+setbb dstr "$DSTRM"
+getbb dstr
+setbb pzcm "$PZCMP"
+getbb pzcm
+setbb name "$NAME"
+getbb name
+setbb sta $STAT
+getbb sta
+setbb lcrn $LCRN
+getbb lcrn
+setbb hcrn $HCRN
+getbb hcrn
+setbb evla $EVLA
+getbb evla
+setbb evlo $EVLO
+getbb evlo
+read %name%.%sta%.%dstr%%comp1
+rmean
+transfer from polezero s %sta%_%comp1%%pzcm%.zp
+mul 100
+ch evla %evla evlo %evlo
+write tmpe
+read %name%.%sta%.%dstr%%comp2
+rmean
+transfer from polezero s %sta%_%comp2%%pzcm%.zp
+mul 100
+ch evla %evla evlo %evlo
+write tmpn
+read %name%.%sta%.%dstr%%comp3
+rmean
+transfer from polezero s %sta%_%comp3%%pzcm%.zp
+mul 100
+ch evla %evla evlo %evlo
+write tmpz
+lh filename az dist
+read tmpe tmpn
+rot
+read more tmpz
+int
+bp co %lcrn %hcrn p 2
+interpolate delta 1.0
+write tmp2 tmp1 tmp3
+quit
+eof
+#\rm *.zp
+sac2helm out={$STAT}_f{$HCRN}.data
+\rm tmp*

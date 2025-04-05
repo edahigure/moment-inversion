@@ -1,0 +1,32 @@
+########################################################################
+#	prod config for REDI TDMT PROGRAM
+########################################################################
+
+
+
+# Setup for time domain moment tensor program
+#
+# Common variables
+#
+setenv MACHINE				sun
+setenv MTPACKAGE			/data/dreger/MTPACKAGE
+setenv REDI_MT_BINDIR			$MTPACKAGE/MTCODE/BIN
+setenv REDI_MT_PROG_1			$REDI_MT_BINDIR/tdmt_redi_launch
+setenv REDI_MT_DATDIR			.
+setenv REDI_MT_LOGDIR			.
+setenv REDI_MT_SYNTHDIR			/data/dreger/MTPACKAGE
+setenv REDI_MT_EXTRACT_OPTIONS		-f
+setenv REDI_MT_DEBUG_OPTION		1
+setenv REDI_MT_STATLIST			$MTPACKAGE/bdsn.stat
+setenv REDI_MT_RESP			$MTPACKAGE/instr.resp
+setenv REDI_MT_DATASTREAM		BH
+setenv REDI_MT_PLOT			0
+#
+#
+# Program specific variables
+setenv REDI_MT_PROG1_PAGE               0
+setenv REDI_MT_PROG1_GFLOC              $MTPACKAGE
+setenv REDI_MT_PROG1_STATMAX            `awk '{}END{print NR}' $REDI_MT_STATLIST`
+setenv REDI_MT_PROG1_STATLIST           "BKS CMB HOPS JRSC KCC MHC MOD ORV PKD SAO WDC YBH"
+setenv REDI_MT_PROG1_NSTAT              "`printenv REDI_MT_PROG1_STATLIST | wc -w`"
+setenv REDI_MT_PROG1_GETLIST `awk '{if(NR==1){printf("%s",$1)} else printf(",%s",$1)}' $REDI_MT_STATLIST`

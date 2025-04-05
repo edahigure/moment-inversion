@@ -1,0 +1,71 @@
+#! /bin/csh
+# Window out the eight fundamental fault vectors for many distances
+# Remember to set NT and DT CORRECTLY!
+
+set path=($path /Users/edahi/Desktop/moment_inversion/bin_ito)
+#
+# YOU MUST CORRECTLY DEFINE THE FOLLOWING FOUR PARAMETERS.
+#set dt=0.50
+#set npts=1024
+# Note that this shell assumes that the different ranges have an
+# equidistant 1 km separation. (i.e. 100, 105, 110, 115).
+set dist=$2
+set depth=$1
+set name=jp
+# Loopend is the total number of distances computed using FILON_OP.
+set loopend=$3
+#
+#
+# THESE PARAMETERS SET THE STARTING VALUES FOR THE WHILE STATEMENT AND
+# ARE USUALLY LEFT ALONE.
+set count=0
+set vshift=0
+set i=0
+set nvec=0
+set ddist=$4
+
+set npts=$5
+set dt=$6
+
+echo run_ft2ascii npts $5 dt $6
+rehash
+#
+#
+# RUN WAVEINT TO PERFORM INVERSE FFT and OUTPUT VELOCITY OR
+# DISPLACEMENT IF DESIRED.
+#echo "before waveint"
+waveint <<END
+d
+END
+#echo "after waveint"
+#
+#
+# BEGIN SHELL
+@ nvec=($loopend - $count) * 10
+while ($count < $loopend)
+@ vshift=$i + 7
+window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec >! tmp1$$ # what is this input file "vec"?
+@ vshift=$i + 4
+window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec >! tmp2$$
+@ vshift=$i + 6
+window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec >! tmp3$$
+@ vshift=$i + 3
+window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec >! tmp4$$
+@ vshift=$i + 1
+window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec >! tmp5$$
+@ vshift=$i + 5
+window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec >! tmp6$$
+@ vshift=$i + 2
+window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec >! tmp7$$
+@ vshift=$i
+window v0=$vshift e0=0 nt=$npts nx=$nvec nv=1 < vec >! tmp8$$
+cat tmp1$$ tmp2$$ tmp3$$ tmp4$$ tmp5$$ tmp6$$ tmp7$$ tmp8$$ >! {$name}{$dist}d{$depth}.bin
+makeascii format="(6e12.5)" ntr=8 dt=$dt nt=$npts < {$name}{$dist}d{$depth}.bin >! {$name}{$dist}d{$depth}.disp
+\rm tmp*$$
+@ i += 10
+@ dist += $ddist
+@ count++
+end
+\rm -f vec junk
+
+

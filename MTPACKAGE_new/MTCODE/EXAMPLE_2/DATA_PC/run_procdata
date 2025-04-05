@@ -1,0 +1,6 @@
+#!/bin/csh
+foreach n (BKS CMB HOPS JRSC KCC MHC ORV PKD SAO YBH)
+foreach m (E N Z)
+./sacsun2linux 19980812141000.{$n}.BH{$m}
+end
+end

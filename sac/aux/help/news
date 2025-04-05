@@ -1,0 +1,23 @@
+
+NEWS
+++++
+
+SUMMARY
+-------
+Prints current news concerning SAC.
+
+SYNTAX
+------
+
+  ``NEWS``
+
+DESCRIPTION
+-----------
+   If there is news to report, a "headline" will usually be written to the
+   terminal when you start up SAC.  You can then type NEWS_ if you want to see
+   details.
+
+LATEST REVISION
+---------------
+   January 8, 1983 (Version 8.0)
+

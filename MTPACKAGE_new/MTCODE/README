@@ -1,0 +1,5 @@
+
+To build the software package use: make all
+
+You will need to edit the Makefile to properly set the path variable, NRC,
+to the Numerical Recipies for C archive file, nrcv2.a

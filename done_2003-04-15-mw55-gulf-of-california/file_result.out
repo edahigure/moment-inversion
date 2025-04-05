@@ -1,0 +1,6 @@
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\cline{1-7}
+\rule[-1ex]{0pt}{3.5ex}  Fecha del evento      & hr:min:sec & EVLA & EVLO & Z $km$ & Mw & Mo  dyn-cm \\
+\cline{1-7}
+\rule[-1ex]{0pt}{3.5ex} 2003-04-15    & 08:21:17 & 25.0148  & -109.4443 & 10 & 
