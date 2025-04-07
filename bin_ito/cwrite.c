@@ -1,6 +1,7 @@
 #include<sys/file.h>
 #include<fcntl.h>
 #include<stdio.h>
+#include<unistd.h>
 
 cwrite_(data,n,nd,l)
   float *data;

@@ -191,7 +191,8 @@ c
 c
 c
       subroutine four(data,nn,isign,dt,df)
-      dimension data(1)
+c      dimension data(1)
+      complex :: data(5000) 
       n = 2 * nn
       if(dt.eq.0.0) dt = 1./(nn*df)
       if(df.eq.0.0) df = 1./(nn*dt)
